@@ -15,6 +15,10 @@
  * @param cszString pointer to a character array in RAM.
  */
 void uartPrint(const char *cszString) {
+  while(*cszString) {
+    uartSend(*cszString);
+    cszString++;
+    }
   }
 
 /** Print a string from PROGMEM
