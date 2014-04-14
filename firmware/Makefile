@@ -1,4 +1,4 @@
-# Makefile for the TinyGB firmware
+# Standard Makefile for ATtiny85 projects
 #----------------------------------------------------------------------------
 # 22-Dec-2013 ShaneG
 #
@@ -20,13 +20,21 @@ LDFLAGS := -mmcu=$(MCU)
 OBJCOPY := avr-objcopy
 MBFLASH := tools/mbflash.py
 
+# Check for DEBUG options
+ifneq ($(DEBUG),)
+CFLAGS  += -DDEBUG
+endif
+
 # Main source
 SOURCES = \
   main.c
 
 # Shared source
 SHARED = \
-  shared/uart_tiny.c
+  shared/uart_send.c \
+  shared/uart_recv.c \
+  shared/uart_print.c \
+  shared/uart_format.c
 
 # Derive object file names
 OBJECTS  = $(filter-out $(SOURCES), $(patsubst %.c,%.o,$(SOURCES)) $(patsubst %.S,%.o,$(SOURCES)))
