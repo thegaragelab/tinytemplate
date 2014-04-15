@@ -17,7 +17,7 @@
  * requires 16 entries. We place it in program memory and access it through
  * the pgmspace functions.
  */
-static uint16_t CRC_LOOKUP[] PROGMEM = {
+static const uint16_t CRC_LOOKUP[] PROGMEM = {
   0x0000, 0x1021, 0x2042, 0x3063, 0x4084, 0x50A5, 0x60C6, 0x70E7,
   0x0881, 0x2991, 0x4AA1, 0x6BB1, 0x8CC1, 0xADD1, 0xCEE1, 0xEFF1
   };
