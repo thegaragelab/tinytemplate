@@ -5,7 +5,54 @@
 *
 * Provides some simple formatted output functions for serial communications.
 *--------------------------------------------------------------------------*/
+#include <stdarg.h>
+#include <stdbool.h>
 #include "softuart.h"
+
+//---------------------------------------------------------------------------
+// Helper functions
+//---------------------------------------------------------------------------
+
+/** Do the actual formatting
+ *
+ * This function uses the current two characters of the input string to
+ * determine what to send to the serial port.
+ *
+ * @param ch1 the current character of the format string
+ * @param ch2 the next character of the format string
+ * @param args the argument list containing the embedded items
+ *
+ * @return true if both characters should be skipped, false if we only need
+ *              to move ahead by one.
+ */
+static bool printFormat(char ch1, char ch2, va_list args) {
+  bool skip = true;
+  // Fail fast
+  if(ch1=='%') {
+    // Use the second character to determine what is requested
+    if((ch2=='%')||(ch2=='\0'))
+      uartSend('%');
+    else if(ch2=='c')
+      uartSend(va_arg(args, int));
+    else if(ch2=='u')
+      uartInt(va_arg(args, uint16_t));
+    else if(ch2=='x')
+      uartHex(va_arg(args, uint16_t));
+    else if(ch2=='s')
+      uartPrint(va_arg(args, const char *));
+    else if(ch2=='S')
+      uartPrintP(va_arg(args, const char *));
+    }
+  else {
+    uartSend(ch1);
+    skip = false;
+    }
+  return skip;
+  }
+
+//---------------------------------------------------------------------------
+// Public API
+//---------------------------------------------------------------------------
 
 /** Print a formatted string from RAM
  *
@@ -29,6 +76,19 @@
  * @param cszString pointer to a nul terminated format string in RAM.
  */
 void uartFormat(const char *cszString, ...) {
+  va_list args;
+  va_start(args, cszString);
+  char ch1, ch2 = *cszString;
+  for(int index=1; cszString[index]; index++) {
+    ch1 = ch2;
+    ch2 = cszString[index];
+    if(printFormat(ch1, ch2, args)) {
+      // Move ahead an extra character so we wind up jumping by two
+      ch1 = ch2;
+      ch2 = cszString[++index];
+      }
+    }
+  va_end(args);
   }
 
 /** Print a formatted string from PROGMEM
@@ -53,4 +113,18 @@ void uartFormat(const char *cszString, ...) {
  * @param cszString pointer to a nul terminated format string in PROGMEM.
  */
 void uartFormatP(const char *cszString, ...) {
+  va_list args;
+  va_start(args, cszString);
+  char ch2 = pgm_read_byte_near(cszString), ch1 = ch2;
+  for(int index=1; ch1!='\0'; index++) {
+    ch1 = ch2;
+    ch2 = pgm_read_byte_near(cszString + index);
+    if(printFormat(ch1, ch2, args)) {
+      // Move ahead an extra character so we wind up jumping by two
+      index++;
+      ch1 = ch2;
+      ch2 = pgm_read_byte_near(cszString + index);
+      }
+    }
+  va_end(args);
   }
