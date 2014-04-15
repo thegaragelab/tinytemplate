@@ -12,13 +12,14 @@ F_CPU     = 8000000
 
 # Define tools and options
 # All you really need to do is change the TARGET name
-TARGET  := attiny85
-SIZE    := avr-size
-CXX     := avr-gcc
-CFLAGS  := -std=gnu99 -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(BASE_DIR)/include
-LDFLAGS := -mmcu=$(MCU)
-OBJCOPY := avr-objcopy
-MBFLASH := tools/mbflash.py
+TARGET   := attiny85
+SIZE     := avr-size
+CXX      := avr-gcc
+OPTIMISE := -ffunction-sections -fdata-sections -ffreestanding
+CFLAGS   := -std=gnu99 -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(BASE_DIR)/include
+LDFLAGS  := -mmcu=$(MCU) --gc-sections -Wl,--relax
+OBJCOPY  := avr-objcopy
+MBFLASH  := tools/mbflash.py
 
 # Check for DEBUG options
 ifneq ($(DEBUG),)
@@ -64,8 +65,9 @@ $(TARGET).hex: $(TARGET).elf
 # How to compile
 %.o: %.c
 	@echo Compiling $<
-	@$(CXX) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CFLAGS) $(OPTIMISE) -c $< -o $@
 
 %.o: %.S
 	@echo Assembling $<
-	@$(CXX) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CFLAGS) $(OPTIMISE) -c $< -o $@
+

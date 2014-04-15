@@ -10,14 +10,16 @@
 #include <avr/io.h>
 #include "softuart.h"
 
+// Forward declaration with 'noreturn' attribute
+void main() __attribute__ ((noreturn));
+
 /** Program entry point
  */
-int main() {
+void main() {
   uint16_t count = 0;
   PRINT("Starting program.");
   while(true) {
     PRINTF("count = %u", count);
     // Do nothing
     }
-  return 0;
   }
