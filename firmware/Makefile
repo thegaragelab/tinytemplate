@@ -17,7 +17,7 @@ SIZE     := avr-size
 CXX      := avr-gcc
 OPTIMISE := -ffunction-sections -fdata-sections -ffreestanding
 CFLAGS   := -std=gnu99 -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(BASE_DIR)/include
-LDFLAGS  := -mmcu=$(MCU) --gc-sections -Wl,--relax
+LDFLAGS  := -mmcu=$(MCU) -Wl,--gc-sections -Wl,--relax
 OBJCOPY  := avr-objcopy
 MBFLASH  := tools/mbflash.py
 
@@ -37,7 +37,8 @@ SHARED = \
   shared/uart_print.c \
   shared/uart_format.c \
   shared/utility.c \
-  shared/crc16.c
+  shared/crc16.c \
+  shared/analog.c
 
 # Derive object file names
 OBJECTS  = $(filter-out $(SOURCES), $(patsubst %.c,%.o,$(SOURCES)) $(patsubst %.S,%.o,$(SOURCES)))
