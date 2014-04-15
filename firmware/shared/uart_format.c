@@ -79,7 +79,7 @@ void uartFormat(const char *cszString, ...) {
   va_list args;
   va_start(args, cszString);
   char ch1, ch2 = *cszString;
-  for(int index=1; cszString[index]; index++) {
+  for(int index=1; ch2!='\0'; index++) {
     ch1 = ch2;
     ch2 = cszString[index];
     if(printFormat(ch1, ch2, args)) {
@@ -116,7 +116,7 @@ void uartFormatP(const char *cszString, ...) {
   va_list args;
   va_start(args, cszString);
   char ch2 = pgm_read_byte_near(cszString), ch1 = ch2;
-  for(int index=1; ch1!='\0'; index++) {
+  for(int index=1; ch2!='\0'; index++) {
     ch1 = ch2;
     ch2 = pgm_read_byte_near(cszString + index);
     if(printFormat(ch1, ch2, args)) {
