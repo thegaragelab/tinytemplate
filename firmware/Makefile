@@ -34,7 +34,8 @@ SHARED = \
   shared/uart_send.c \
   shared/uart_recv.c \
   shared/uart_print.c \
-  shared/uart_format.c
+  shared/uart_format.c \
+  shared/utility.c
 
 # Derive object file names
 OBJECTS  = $(filter-out $(SOURCES), $(patsubst %.c,%.o,$(SOURCES)) $(patsubst %.S,%.o,$(SOURCES)))
