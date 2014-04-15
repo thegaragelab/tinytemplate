@@ -35,9 +35,9 @@ static bool printFormat(char ch1, char ch2, va_list args) {
     else if(ch2=='c')
       uartSend(va_arg(args, int));
     else if(ch2=='u')
-      uartInt(va_arg(args, uint16_t));
+      uartInt(va_arg(args, unsigned int));
     else if(ch2=='x')
-      uartHex(va_arg(args, uint16_t));
+      uartHex(va_arg(args, unsigned int));
     else if(ch2=='s')
       uartPrint(va_arg(args, const char *));
     else if(ch2=='S')
