@@ -24,6 +24,53 @@ extern "C" {
  */
 char hexChar(uint8_t value);
 
+/** Initialise the CRC calculation
+ *
+ * Initialises the CRC value prior to processing data.
+ *
+ * @return the initial CRC value.
+ */
+uint16_t crcInit();
+
+/** Add a byte to an ongoing CRC calculation
+ *
+ * Update the CRC value with an additional data byte.
+ *
+ * @param crc the current CRC value
+ * @param data the data byte to add to the calculation
+ *
+ * @return the updated CRC value.
+ */
+uint16_t crcByte(uint16_t crc, uint8_t data);
+
+/** Add a block of data to an ongoing CRC calculation
+ *
+ * Add a sequence of bytes from a buffer in RAM. Note that this function can
+ * process up to 255 bytes in a single call (which is usually enough for a
+ * microcontroller application).
+ *
+ * @param crc the current CRC value
+ * @param pData pointer to the memory buffer
+ * @param length the number of bytes to process.
+ *
+ * @return the updated CRC value.
+ */
+uint16_t crcData(uint16_t crc, const uint8_t *pData, uint8_t length);
+
+/** Add a block of data to an ongoing CRC calculation
+ *
+ * Add a sequence of bytes from a buffer in PROGMEM. Note that this function
+ * can process up to 255 bytes in a single call (which is usually enough for a
+ * microcontroller application).
+ *
+ * @param crc the current CRC value
+ * @param pData pointer to the memory location.
+ * @param length the number of bytes to process.
+ *
+ * @return the updated CRC value.
+ */
+uint16_t crcDataP(uint16_t crc, const uint8_t *pData, uint8_t length);
+
 #ifdef __cplusplus
   }
 #endif
