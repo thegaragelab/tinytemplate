@@ -30,8 +30,11 @@ void uartPrint(const char *cszString) {
  * @param cszString pointer to a character array in PROGMEM.
  */
 void uartPrintP(const char *cszString) {
-  uint8_t ch = pgm_read_byte_near(cszString);
-  for(; ch!=0; uartSend(ch), ch = pgm_read_byte_near(++cszString));
+  uint8_t ch;
+  while((ch = pgm_read_byte_near(cszString))!='\0') {
+    uartSend(ch);
+    cszString++;
+    }
   }
 
 /** Print an unsigned 16 bit value in decimal
