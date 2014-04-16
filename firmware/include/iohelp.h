@@ -1,12 +1,12 @@
 /*--------------------------------------------------------------------------*
-* Analog input helpers
+* IO convenience functions
 *---------------------------------------------------------------------------*
-* 15-Apr-2014 ShaneG
+* 16-Apr-2014 ShaneG
 *
-* These functions provide simple and accurate analog value reading.
+* These functions provide simple ways to deal with common IO functions.
 *--------------------------------------------------------------------------*/
-#ifndef __ANALOG_H
-#define __ANALOG_H
+#ifndef __IOHELP_H
+#define __IOHELP_H
 
 //--- Required definitions
 #include <stdint.h>
@@ -35,4 +35,4 @@ uint16_t analogRead(uint8_t pin, uint8_t skip, uint8_t average);
 }
 #endif
 
-#endif /* __ANALOG_H */
+#endif /* __IOHELP_H */

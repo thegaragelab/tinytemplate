@@ -6,7 +6,7 @@
 * These functions provide simple and accurate analog value reading.
 *--------------------------------------------------------------------------*/
 #include <avr/io.h>
-#include "analog.h"
+#include "iohelp.h"
 
 /** Initialise the specified analog pin
  *
