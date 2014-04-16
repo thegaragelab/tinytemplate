@@ -20,6 +20,7 @@ CFLAGS   := -std=gnu99 -Wall -Os -mmcu=$(MCU) -DF_CPU=$(F_CPU) -I$(BASE_DIR)/inc
 LDFLAGS  := -mmcu=$(MCU) -Wl,--gc-sections -Wl,--relax
 OBJCOPY  := avr-objcopy
 MBFLASH  := tools/mbflash.py
+DOXYGEN  := doxygen
 
 # Check for DEBUG options
 ifneq ($(DEBUG),)
@@ -44,7 +45,7 @@ SHARED = \
 OBJECTS  = $(filter-out $(SOURCES), $(patsubst %.c,%.o,$(SOURCES)) $(patsubst %.S,%.o,$(SOURCES)))
 OBJECTS += $(filter-out $(SHARED), $(patsubst %.c,%.o,$(SHARED)) $(patsubst %.S,%.o,$(SHARED)))
 
-.PHONY: all clean
+.PHONY: all clean docs
 
 all: $(TARGET).hex
 
@@ -54,6 +55,10 @@ clean:
 flash: $(TARGET).hex
 	@$(MBFLASH) -d $(MCU) $(TARGET).hex
 
+docs:
+	@rm -rf docs
+	@echo "Generating documentation ..."
+	@$(DOXYGEN) doxygen.config
 
 $(TARGET).elf: $(OBJECTS)
 	@echo Linking

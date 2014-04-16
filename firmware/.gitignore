@@ -1,3 +1,4 @@
 *.elf
 *.hex
 *.o
+docs
