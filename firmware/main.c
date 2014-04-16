@@ -9,6 +9,7 @@
 #include <stdbool.h>
 #include <avr/io.h>
 #include "softuart.h"
+#include "utility.h"
 
 // Forward declaration with 'noreturn' attribute
 void main() __attribute__ ((noreturn));
@@ -17,9 +18,14 @@ void main() __attribute__ ((noreturn));
  */
 void main() {
   uint16_t count = 0;
-  PRINT("Starting program.");
+  uartInit();
   while(true) {
-    PRINTF("count = %u", count);
-    // Do nothing
+    count++;
+    PRINTF("1: %c\n", count);
+    PRINTF("2: %s, %c\n", "string", count);
+    PRINTF("3: %c, %s, %c\n", count, "string", count);
+    PRINTF("4: %c, %c, %s\n", count, count, "string");
+    PRINTF("5: %c, %c, %s, %c\n", count, count, "string", count);
+    wait(1000);
     }
   }
