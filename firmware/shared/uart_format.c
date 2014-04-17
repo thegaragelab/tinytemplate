@@ -25,7 +25,7 @@
  * @return true if both characters should be skipped, false if we only need
  *              to move ahead by one.
  */
-static bool printFormat(char ch1, char ch2, va_list args) {
+static bool printFormat(char ch1, char ch2, va_list *args) {
   bool skip = true;
   // Fail fast
   if(ch1=='%') {
@@ -33,15 +33,15 @@ static bool printFormat(char ch1, char ch2, va_list args) {
     if((ch2=='%')||(ch2=='\0'))
       uartSend('%');
     else if(ch2=='c')
-      uartSend(va_arg(args, int));
+      uartSend(va_arg(*args, int));
     else if(ch2=='u')
-      uartInt(va_arg(args, unsigned int));
+      uartInt(va_arg(*args, unsigned int));
     else if(ch2=='x')
-      uartHex(va_arg(args, unsigned int));
+      uartHex(va_arg(*args, unsigned int));
     else if(ch2=='s')
-      uartPrint(va_arg(args, const char *));
+      uartPrint(va_arg(*args, char *));
     else if(ch2=='S')
-      uartPrintP(va_arg(args, const char *));
+      uartPrintP(va_arg(*args, char *));
     }
   else {
     uartSend(ch1);
@@ -82,7 +82,7 @@ void uartFormat(const char *cszString, ...) {
   for(int index=1; ch2!='\0'; index++) {
     ch1 = ch2;
     ch2 = cszString[index];
-    if(printFormat(ch1, ch2, args)) {
+    if(printFormat(ch1, ch2, &args)) {
       // Move ahead an extra character so we wind up jumping by two
       ch1 = ch2;
       ch2 = cszString[++index];
@@ -119,7 +119,7 @@ void uartFormatP(const char *cszString, ...) {
   for(int index=1; ch2!='\0'; index++) {
     ch1 = ch2;
     ch2 = pgm_read_byte_near(cszString + index);
-    if(printFormat(ch1, ch2, args)) {
+    if(printFormat(ch1, ch2, &args)) {
       // Move ahead an extra character so we wind up jumping by two
       index++;
       ch1 = ch2;
