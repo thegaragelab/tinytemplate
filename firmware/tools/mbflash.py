@@ -8,6 +8,7 @@ import sys
 from os.path import splitext, basename, exists
 from intelhex import IntelHex
 from microboot import Microboot, MicrobootException
+from mbutil import beginProgress, updateProgress, endProgress
 
 #--- Banner and usage information
 BANNER = """
@@ -54,6 +55,10 @@ def adjustStartup(info, hexfile):
   opcode = (hexfile[1] << 8) | hexfile[0]
   if (opcode & 0xF000) <> 0xC000:
     raise MicrobootException("Expected 'jsr XXX' (0xCXXX) instruction at start. Got %04x" % opcode)
+  # Make sure we have room to stash the address
+  if hexfile.maxaddr() >= (upper - 2):
+    raise MicrobootException("Application code would overwrite address storage location.")
+  # Calculate the application start address
   address = (opcode & 0x0FFF) + 1
   print "Application start : %04x" % address
   # Generate the correct code
@@ -142,9 +147,24 @@ if __name__ == "__main__":
     print "Error: Could not connect to device, error message is:"
     print "       " + str(ex)
     exit(1)
-  mb.write(start, length, data)
+  beginProgress("Writing")
+  try:
+    mb.write(start, length, data, updateProgress)
+  except Exception, ex:
+    endProgress()
+    print "Error: Writing to flash failed, error message is:"
+    print "       " + str(ex)
+    exit(1)
+  endProgress()
   # Now verify
-  print "Verifying data ..."
-  mb.verify(start, length, data)
+  beginProgress("Verifying")
+  try:
+    mb.verify(start, length, data, updateProgress)
+  except Exception, ex:
+    endProgress()
+    print "Error: Verification failed, error message is:"
+    print "       " + str(ex)
+    exit(1)
+  endProgress()
   mb.disconnect()
 

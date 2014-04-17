@@ -8,8 +8,7 @@ import sys
 from os.path import splitext, basename
 from intelhex import IntelHex
 from microboot import Microboot, MicrobootException
-
-from random import getrandbits
+from mbutil import beginProgress, updateProgress, endProgress
 
 #--- Banner and usage information
 BANNER = """
@@ -102,7 +101,16 @@ if __name__ == "__main__":
   # Connect to the device
   mb.connect(device, port)
   # Read everything
-  data = mb.read(info[3], size)
+  data = None
+  beginProgress("Reading")
+  try:
+    data = mb.read(info[3], size, updateProgress)
+  except Exception, ex:
+    endProgress()
+    print "Error: Reading failed, error message is:"
+    print "       " + str(ex)
+    exit(1)
+  endProgress()
   mb.disconnect()
   # Create the HEX file
   hexfile = IntelHex()

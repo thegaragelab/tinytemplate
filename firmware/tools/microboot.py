@@ -207,7 +207,7 @@ class Microboot:
           self.serial.write(ch)
           rcvd = self.serial.read(1)
           if rcvd <> ch:
-            raise MicrobootException("Unexpected response on serial port - got '%c', expected '%c'." % (rcvd, ch))
+            raise MicrobootException("Unexpected response on serial port - got '%c', expected '%c'." % (chr(rcvd), chr(ch)))
       else:
         written = 0
         while written < len(command):
@@ -503,8 +503,8 @@ class Microboot:
                         that have been transferred and the number of bytes
                         requested.
 
-        @throws MicrobootException if the address is out of range or a
-                communication error occurs.
+        @throws MicrobootException if the data does not match, the address is
+                out of range or a communication error occurs.
     """
     # Read the data
     current = self.read(start, length, callback = callback)
