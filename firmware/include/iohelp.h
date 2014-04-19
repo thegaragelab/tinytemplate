@@ -59,21 +59,39 @@ void pinSet(uint8_t pin, bool value);
 // Analog helper functions
 //---------------------------------------------------------------------------
 
+/** Analog pin inputs
+ */
+typedef enum _ANALOG {
+  ADC0 = 0x00, //! ADC0, PB5
+  ADC1,        //! ADC1, PB2
+  ADC2,        //! ADC2, PB4
+  ADC3,        //! ADC3, PB3
+  ADC4 = 0x0F  //! ADC4 - internal temperature sensor
+  } ANALOG;
+
 /** Initialise the specified analog pin
  *
- * @param pin the analog pin number to initialise.
- */
-void analogInit(uint8_t pin);
-
-/** Read a value from the given pin
+ * This function initialises the ADC accessory as well as setting up the input
+ * pin attached to the ADC. The set up uses VCC as the reference voltage. If
+ * you need to change this do so after initialising all the ADC inputs you
+ * want to use.
  *
- * @param pin the analog pin number to read
+ * @param adc the ADC input to initialise.
+ */
+void adcInit(ANALOG adc);
+
+/** Read a value from the analog input
+ *
+ * Read a 10 bit value from the specified input with option input skipping and
+ * averaging.
+ *
+ * @param adc the ADC input to read
  * @param skip the number of samples to skip (read and ignore).
  * @param average the number of samples to average (must be >= 1)
  *
  * @return the sample value.
  */
-uint16_t analogRead(uint8_t pin, uint8_t skip, uint8_t average);
+uint16_t adcRead(ANALOG adc, uint8_t skip, uint8_t average);
 
 //---------------------------------------------------------------------------
 // PWM helpers
