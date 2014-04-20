@@ -7,7 +7,8 @@ The project provides the following features:
 
 1. Schematics (in [Fritzing](http://fritzing.org/home/) format) for two
    variations of an ATtiny85 breakout board for rapid development. See
-   [this post]() for more information.
+   [this post](http://thegaragelab.com/posts/attiny85-breakout-board.html)
+   for more information.
 2. Hex files and support tools for the [Microboot](https://github.com/thegaragelab/microboot)
    bootloader.
 3. A library of support functions for the ATtiny providing features suchs as
