@@ -60,6 +60,8 @@ docs:
 	@rm -rf docs
 	@echo "Generating documentation ..."
 	@$(DOXYGEN) doxygen.config
+	@mkdir -p html
+	@cp -R docs/* html
 
 $(TARGET).elf: $(OBJECTS)
 	@echo Linking
