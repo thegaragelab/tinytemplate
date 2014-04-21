@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.4"/>
-<title>ATtiny85 Template Code: Main Page</title>
+<title>ATtiny85 Template Code: include/README.md Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,8 +44,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -64,6 +65,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>Globals</span></a></li>
+    </ul>
+  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -76,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('include_2_r_e_a_d_m_e_8md.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -84,7 +91,7 @@ $(document).ready(function(){initNavTree('index.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,27 +102,17 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">ATtiny85 Template Code Documentation</div>  </div>
+<div class="title">include/README.md</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This repository provides a simple template that can be used to develop ATtiny85 based projects. As well as support for a serial bootloader (via the <a href="https://github.com/thegaragelab/microboot">Microboot</a> software and tools) and template <a href="http://fritzing.org/home/">Fritzing</a> projects for a basic development board it provides source for a library of commonly used routines. These pages document that source.</p>
-<p>Some notable features of the library are noted here. Please browse through the full documentation to see other features.</p>
-<h1>Software UART</h1>
-<p>Defined in <a class="el" href="softuart_8h.html">softuart.h</a>.</p>
-<p>The library provides a software UART implementation that uses a single pin for both Tx and Rx (with the help of some additional circuitry). The software and hardware for this design originally came from <a href="http://nerdralph.blogspot.com.au/2014/01/avr-half-duplex-software-uart.html">this site</a>.</p>
-<p>The library provides a simple method of initialising and reading data from the implemented serial port through the <a class="el" href="softuart_8h.html#ac9cc64ed836eb5785dea53a934c023e6">uartInit()</a>, <a class="el" href="softuart_8h.html#af369bc28bff778cf181a92fba7b544e3">uartSend()</a> and <a class="el" href="softuart_8h.html#aa433477328b5596a761980fd29d304dc">uartRecv()</a> functions. Additional helper functions have been provide to print integers (in both hexadecimal and decimal), strings (from RAM or program memory) and to provide <em>printf()</em> style formatted output.</p>
-<h1>IO Helper Functions</h1>
-<p>Defined in <a class="el" href="iohelp_8h.html">iohelp.h</a></p>
-<p>These functions provide a simple method of configuring and using IO features of the processor including general digital IO, analog input, PWM output and a software implementation of the SPI protocol.</p>
-<h1>Utility Functions</h1>
-<p>Defined in <a class="el" href="utility_8h.html">utility.h</a></p>
-<p>This is a collection of helper functions to perform various tasks that are not directly related to IO. </p>
-</div></div><!-- contents -->
+<a href="include_2_r_e_a_d_m_e_8md.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;Common include files <span class="keywordflow">for</span> shared code.</div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:48 for ATtiny85 Template Code by
+    <li class="navelem"><a class="el" href="include_2_r_e_a_d_m_e_8md.html">README.md</a></li>
+    <li class="footer">Generated on Mon Apr 21 2014 13:57:20 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
