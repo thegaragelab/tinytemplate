@@ -62,11 +62,11 @@ void pinSet(uint8_t pin, bool value);
 /** Analog pin inputs
  */
 typedef enum _ANALOG {
-  ADC0 = 0x00, //! ADC0, PB5
-  ADC1,        //! ADC1, PB2
-  ADC2,        //! ADC2, PB4
-  ADC3,        //! ADC3, PB3
-  ADC4 = 0x0F  //! ADC4 - internal temperature sensor
+  ADC0 = 0x00, //!< ADC0, PB5
+  ADC1,        //!< ADC1, PB2
+  ADC2,        //!< ADC2, PB4
+  ADC3,        //!< ADC3, PB3
+  ADC4 = 0x0F  //!< ADC4 - internal temperature sensor
   } ANALOG;
 
 /** Initialise the specified analog pin
