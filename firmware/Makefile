@@ -40,7 +40,9 @@ SHARED = \
   shared/utility.c \
   shared/crc16.c \
   shared/analog.c \
-  shared/softspi.c
+  shared/softspi.c \
+  shared/nokiafont.c \
+  shared/nokialcd.c
 
 # Derive object file names
 OBJECTS  = $(filter-out $(SOURCES), $(patsubst %.c,%.o,$(SOURCES)) $(patsubst %.S,%.o,$(SOURCES)))

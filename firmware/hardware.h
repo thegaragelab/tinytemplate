@@ -19,4 +19,10 @@
 #define UART_DDR  DDRB
 #define UART_PIN  PINB5
 
+// Nokia LCD pin numbers
+#define LCD_MOSI  PINB2
+#define LCD_SCK   PINB3
+#define LCD_CD    PINB4
+#define LCD_RESET PINB5
+
 #endif /* __HARDWARE_H */
