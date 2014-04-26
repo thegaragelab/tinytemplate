@@ -18,6 +18,9 @@ extern PROGMEM const uint8_t BASE_FONT[];
 // Font width
 #define FONT_WIDTH 5
 
+// Only provide the functions if the driver is enabled
+#ifdef LCD_ENABLED
+
 //---------------------------------------------------------------------------
 // Helper functions
 //---------------------------------------------------------------------------
@@ -231,4 +234,7 @@ void lcdImageP(uint8_t row, uint8_t col, const uint8_t *img, bool invert) {
     row++;
     }
   }
+
+// Only provide the functions if the driver is enabled
+#endif /* LCD_ENABLED */
 

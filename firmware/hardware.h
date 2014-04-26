@@ -19,6 +19,16 @@
 #define UART_DDR  DDRB
 #define UART_PIN  PINB5
 
+//---------------------------------------------------------------------------
+// Nokia LCD device support
+//
+// To use this device uncomment the LCD_ENABLED line below and define your
+// pins with the LCD_xxx defines
+//---------------------------------------------------------------------------
+
+// Enable Nokia LCD support
+#define LCD_ENABLED
+
 // Nokia LCD pin numbers
 #define LCD_MOSI  PINB2
 #define LCD_SCK   PINB3
