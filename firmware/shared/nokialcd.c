@@ -54,21 +54,18 @@ static void lcdCommand(uint8_t data) {
  * @ref hardware.h.
  */
 void lcdInit() {
-  // Set up the output pins, ensuring they are all 'high' to start
+  // Set up the output pins, ensuring they are all 'low' to start
   uint8_t val = (1 << LCD_SCK) | (1 << LCD_MOSI) | (1 << LCD_RESET) | (1 << LCD_CD);
-  PORTB |= val;
+  PORTB &= ~val;
   DDRB |= val;
   // Do a hard reset on the LCD
-  val = (1 << LCD_RESET);
-  PORTB &= ~val;
-  wait(1);
-  PORTB |= val;
+  wait(10);
+  PORTB |= (1 << LCD_RESET);
   // Initialise the LCD
   lcdCommand(0x21);  // LCD Extended Commands.
-  lcdCommand(0xA8);  // Set LCD Vop (Contrast) 0xB1/0xA1.
+  lcdCommand(0xA1);  // Set LCD Vop (Contrast) 0xB1/0xA1.
   lcdCommand(0x04);  // Set Temp coefficent. //0x04
   lcdCommand(0x14);  // LCD bias mode 1:48. //0x13
-  lcdCommand(0x0C);  // Normal display, horizontal addressing
   lcdCommand(0x20);  // LCD Normal commands
   lcdCommand(0x0C);  // Normal display, horizontal addressing
   }
