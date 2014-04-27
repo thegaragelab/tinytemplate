@@ -38,7 +38,7 @@ void sspiInit(uint8_t sck, uint8_t mosi, uint8_t miso) {
  * @param bits the number of bits to transfer
  */
 void sspiOutMSB(uint8_t sck, uint8_t mosi, uint16_t data, uint8_t bits) {
-  uint16_t mask = (1 << bits);
+  uint16_t mask = (1 << (bits - 1));
   uint8_t output = (1 << mosi);
   uint8_t clock = (1 << sck);
   while(bits) {
