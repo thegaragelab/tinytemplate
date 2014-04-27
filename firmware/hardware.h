@@ -31,8 +31,8 @@
 
 // Nokia LCD pin numbers
 #define LCD_MOSI  PINB2
-#define LCD_SCK   PINB3
-#define LCD_CD    PINB4
-#define LCD_RESET PINB5
+#define LCD_SCK   PINB4
+#define LCD_CD    PINB1
+#define LCD_RESET PINB0
 
 #endif /* __HARDWARE_H */
