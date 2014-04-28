@@ -1,4 +1,5 @@
 <map id="include/iohelp.h" name="include/iohelp.h">
 <area shape="rect" id="node3" href="$analog_8c.html" title="shared/analog.c" alt="" coords="5,83,120,112"/>
-<area shape="rect" id="node5" href="$softspi_8c.html" title="shared/softspi.c" alt="" coords="144,83,259,112"/>
+<area shape="rect" id="node5" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="144,83,267,112"/>
+<area shape="rect" id="node7" href="$softspi_8c.html" title="shared/softspi.c" alt="" coords="291,83,405,112"/>
 </map>

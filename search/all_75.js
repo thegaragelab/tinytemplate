@@ -1,7 +1,10 @@
 var searchData=
 [
+  ['uart_5fddr',['UART_DDR',['../hardware_8h.html#af41071861422ce5433a6814f9155028b',1,'hardware.h']]],
   ['uart_5fdefs_2eh',['uart_defs.h',['../uart__defs_8h.html',1,'']]],
   ['uart_5fformat_2ec',['uart_format.c',['../uart__format_8c.html',1,'']]],
+  ['uart_5fpin',['UART_PIN',['../hardware_8h.html#adfe1f2f2e871773f12769d2970182b01',1,'hardware.h']]],
+  ['uart_5fport',['UART_PORT',['../hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3',1,'hardware.h']]],
   ['uart_5fprint_2ec',['uart_print.c',['../uart__print_8c.html',1,'']]],
   ['uart_5frecv_2ec',['uart_recv.c',['../uart__recv_8c.html',1,'']]],
   ['uart_5fsend_2ec',['uart_send.c',['../uart__send_8c.html',1,'']]],

@@ -1,0 +1,5 @@
+<map id="lcdClearRow" name="lcdClearRow">
+<area shape="rect" id="node3" href="$nokialcd_8c.html#a4ad1bbb392f9aad8e794174f14a759f2" title="lcdCommand" alt="" coords="152,5,251,35"/>
+<area shape="rect" id="node7" href="$nokialcd_8c.html#a49c8f51fe1e2c73a777debfdd3e9a7f1" title="lcdData" alt="" coords="168,59,235,88"/>
+<area shape="rect" id="node5" href="$softspi_8c.html#a9201169ebd99c1ef3bd65c0cb3f3944c" title="sspiOutMSB" alt="" coords="299,32,395,61"/>
+</map>

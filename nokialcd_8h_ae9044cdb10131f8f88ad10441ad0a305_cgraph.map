@@ -1,0 +1,6 @@
+<map id="lcdPrintP" name="lcdPrintP">
+<area shape="rect" id="node3" href="$nokialcd_8c.html#a5f827f36eee0ca1b258ebf10a31d6f30" title="lcdPrintChar" alt="" coords="129,32,223,61"/>
+<area shape="rect" id="node5" href="$nokialcd_8c.html#a4ad1bbb392f9aad8e794174f14a759f2" title="lcdCommand" alt="" coords="272,5,371,35"/>
+<area shape="rect" id="node9" href="$nokialcd_8c.html#a49c8f51fe1e2c73a777debfdd3e9a7f1" title="lcdData" alt="" coords="288,59,355,88"/>
+<area shape="rect" id="node7" href="$softspi_8c.html#a9201169ebd99c1ef3bd65c0cb3f3944c" title="sspiOutMSB" alt="" coords="419,32,515,61"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="hardware.h" name="hardware.h">
+<area shape="rect" id="node3" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="5,83,128,112"/>
+<area shape="rect" id="node5" href="$uart__recv_8c.html" title="shared/uart_recv.c" alt="" coords="152,83,283,112"/>
+<area shape="rect" id="node7" href="$uart__send_8c.html" title="shared/uart_send.c" alt="" coords="307,83,440,112"/>
+</map>

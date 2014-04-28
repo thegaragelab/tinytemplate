@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('uart__recv_8c_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -135,8 +135,8 @@ $(document).ready(function(){initNavTree('uart__recv_8c_source.html','');});
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="softuart_8h.html#aa433477328b5596a761980fd29d304dc">   44</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="uart__recv_8c.html#aa433477328b5596a761980fd29d304dc">uartRecv</a>() {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keywordtype">char</span> ch;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Set as input and disable pullup</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  UART_DDR  &amp;= ~(1 &lt;&lt; UART_PIN);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  UART_PORT &amp;= ~(1 &lt;&lt; UART_PIN);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="hardware_8h.html#af41071861422ce5433a6814f9155028b">UART_DDR</a>  &amp;= ~(1 &lt;&lt; <a class="code" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">UART_PIN</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3">UART_PORT</a> &amp;= ~(1 &lt;&lt; <a class="code" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">UART_PIN</a>);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// Read the byte</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">asm</span> <span class="keyword">volatile</span>(</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="stringliteral">&quot;  ldi r18, %[rxdelay2]              \n\t&quot;</span> <span class="comment">// 1.5 bit delay</span></div>
@@ -158,8 +158,8 @@ $(document).ready(function(){initNavTree('uart__recv_8c_source.html','');});
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="stringliteral">&quot;  dec r18                           \n\t&quot;</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="stringliteral">&quot;  brne StopBit                      \n\t&quot;</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    : <span class="stringliteral">&quot;=r&quot;</span> (ch)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    : [uart_port] <span class="stringliteral">&quot;I&quot;</span> (_SFR_IO_ADDR(UART_PORT)),</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      [uart_pin] <span class="stringliteral">&quot;I&quot;</span> (UART_PIN),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    : [uart_port] <span class="stringliteral">&quot;I&quot;</span> (_SFR_IO_ADDR(<a class="code" href="hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3">UART_PORT</a>)),</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      [uart_pin] <span class="stringliteral">&quot;I&quot;</span> (<a class="code" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">UART_PIN</a>),</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      [rxdelay] <span class="stringliteral">&quot;I&quot;</span> (RXDELAY),</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      [rxdelay2] <span class="stringliteral">&quot;I&quot;</span> (RXDELAY2)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    : <span class="stringliteral">&quot;r0&quot;</span>,<span class="stringliteral">&quot;r18&quot;</span>,<span class="stringliteral">&quot;r19&quot;</span>);</div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('uart__recv_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="uart__recv_8c.html">uart_recv.c</a></li>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:48 for ATtiny85 Template Code by
+    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

@@ -1,0 +1,5 @@
+<map id="lcdInit" name="lcdInit">
+<area shape="rect" id="node3" href="$utility_8c.html#a5e0e166815dbba12bd85e97ceaff9117" title="wait" alt="" coords="139,5,184,35"/>
+<area shape="rect" id="node5" href="$nokialcd_8c.html#a4ad1bbb392f9aad8e794174f14a759f2" title="lcdCommand" alt="" coords="112,59,211,88"/>
+<area shape="rect" id="node7" href="$softspi_8c.html#a9201169ebd99c1ef3bd65c0cb3f3944c" title="sspiOutMSB" alt="" coords="259,59,355,88"/>
+</map>

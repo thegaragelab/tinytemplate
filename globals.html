@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li class="current"><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_vars.html"><span>Variables</span></a></li>
       <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
@@ -84,8 +85,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="#index__"><span>_</span></a></li>
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
+      <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
@@ -112,7 +116,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -161,18 +165,32 @@ $(document).ready(function(){initNavTree('globals.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
+<li>BASE_FONT
+: <a class="el" href="nokiafont_8c.html#af7e925f3a0b9a447ba30365c3fde956a">nokiafont.c</a>
+, <a class="el" href="nokialcd_8c.html#af7e925f3a0b9a447ba30365c3fde956a">nokialcd.c</a>
+</li>
+<li>BAUD_RATE
+: <a class="el" href="hardware_8h.html#ad4455691936f92fdd6c37566fc58ba1f">hardware.h</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>CHAR_WIDTH
+: <a class="el" href="nokialcd_8c.html#a655981006fca173dd2e056bf81a63dc3">nokialcd.c</a>
+</li>
 <li>crcByte()
 : <a class="el" href="crc16_8c.html#a9c996d42074a7561fce02a01cbbc46b3">crc16.c</a>
 , <a class="el" href="utility_8h.html#a9c996d42074a7561fce02a01cbbc46b3">utility.h</a>
 </li>
 <li>crcData()
-: <a class="el" href="utility_8h.html#a2d0744572bd90390f23d026b1f124b35">utility.h</a>
-, <a class="el" href="crc16_8c.html#a2d0744572bd90390f23d026b1f124b35">crc16.c</a>
+: <a class="el" href="crc16_8c.html#a2d0744572bd90390f23d026b1f124b35">crc16.c</a>
+, <a class="el" href="utility_8h.html#a2d0744572bd90390f23d026b1f124b35">utility.h</a>
 </li>
 <li>crcDataP()
-: <a class="el" href="crc16_8c.html#ae0b234f3ecde1dea0cbc7a2b53bf53fc">crc16.c</a>
-, <a class="el" href="utility_8h.html#ae0b234f3ecde1dea0cbc7a2b53bf53fc">utility.h</a>
+: <a class="el" href="utility_8h.html#ae0b234f3ecde1dea0cbc7a2b53bf53fc">utility.h</a>
+, <a class="el" href="crc16_8c.html#ae0b234f3ecde1dea0cbc7a2b53bf53fc">crc16.c</a>
 </li>
 <li>crcInit()
 : <a class="el" href="utility_8h.html#a606e000d8bc9311e86c36911f9ac417a">utility.h</a>
@@ -181,10 +199,78 @@ $(document).ready(function(){initNavTree('globals.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
+<li>FONT_WIDTH
+: <a class="el" href="nokialcd_8c.html#a7b2e9cc063e140c50b67a4f224988a45">nokialcd.c</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
 <li>hexChar()
 : <a class="el" href="utility_8c.html#a199b431089c371605397b9df22fd9186">utility.c</a>
 , <a class="el" href="utility_8h.html#a199b431089c371605397b9df22fd9186">utility.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>LCD_CD
+: <a class="el" href="hardware_8h.html#a7db11f262864923bfb723ad406be4b8a">hardware.h</a>
+</li>
+<li>LCD_COL
+: <a class="el" href="nokialcd_8h.html#a022c9a5e213dc30d3dcfe63b1c502ad7">nokialcd.h</a>
+</li>
+<li>LCD_ENABLED
+: <a class="el" href="hardware_8h.html#a2a130da2c94a4ad41bff326912371615">hardware.h</a>
+</li>
+<li>LCD_MOSI
+: <a class="el" href="hardware_8h.html#a7c52f1795c0919f36b0cfbe3d6645cc7">hardware.h</a>
+</li>
+<li>LCD_RESET
+: <a class="el" href="hardware_8h.html#a597d93b1f461dfdcdc2a6110bcf83b43">hardware.h</a>
+</li>
+<li>LCD_ROW
+: <a class="el" href="nokialcd_8h.html#a9d03ce59ff82a10ccd26b04f40411e80">nokialcd.h</a>
+</li>
+<li>LCD_SCK
+: <a class="el" href="hardware_8h.html#ac28c9759b60d3e2ce175ad3df49757d7">hardware.h</a>
+</li>
+<li>lcdClear()
+: <a class="el" href="nokialcd_8c.html#a43af9b69bc8ae1e5bc9f273716363139">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#a43af9b69bc8ae1e5bc9f273716363139">nokialcd.h</a>
+</li>
+<li>lcdClearRow()
+: <a class="el" href="nokialcd_8c.html#adf2c0ee9e535d1e2f7fb7a9cac540cb5">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#adf2c0ee9e535d1e2f7fb7a9cac540cb5">nokialcd.h</a>
+</li>
+<li>lcdCommand()
+: <a class="el" href="nokialcd_8c.html#a4ad1bbb392f9aad8e794174f14a759f2">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#a4ad1bbb392f9aad8e794174f14a759f2">nokialcd.h</a>
+</li>
+<li>lcdData()
+: <a class="el" href="nokialcd_8h.html#a49c8f51fe1e2c73a777debfdd3e9a7f1">nokialcd.h</a>
+, <a class="el" href="nokialcd_8c.html#a49c8f51fe1e2c73a777debfdd3e9a7f1">nokialcd.c</a>
+</li>
+<li>lcdImageP()
+: <a class="el" href="nokialcd_8c.html#aff2edcf97d7a6ea7c22a5d76bfc63154">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#aff2edcf97d7a6ea7c22a5d76bfc63154">nokialcd.h</a>
+</li>
+<li>lcdInit()
+: <a class="el" href="nokialcd_8c.html#a3004c9c4fb128520f24f4407dca4f8cf">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf">nokialcd.h</a>
+</li>
+<li>lcdPrint()
+: <a class="el" href="nokialcd_8c.html#a3de359e703aeb6f576fd6c2debcafaaf">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#a3de359e703aeb6f576fd6c2debcafaaf">nokialcd.h</a>
+</li>
+<li>lcdPrintChar()
+: <a class="el" href="nokialcd_8c.html#a5f827f36eee0ca1b258ebf10a31d6f30">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#a5f827f36eee0ca1b258ebf10a31d6f30">nokialcd.h</a>
+</li>
+<li>lcdPrintP()
+: <a class="el" href="nokialcd_8c.html#ae9044cdb10131f8f88ad10441ad0a305">nokialcd.c</a>
+, <a class="el" href="nokialcd_8h.html#ae9044cdb10131f8f88ad10441ad0a305">nokialcd.h</a>
 </li>
 </ul>
 
@@ -250,41 +336,50 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
+<li>UART_DDR
+: <a class="el" href="hardware_8h.html#af41071861422ce5433a6814f9155028b">hardware.h</a>
+</li>
+<li>UART_PIN
+: <a class="el" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">hardware.h</a>
+</li>
+<li>UART_PORT
+: <a class="el" href="hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3">hardware.h</a>
+</li>
 <li>uartAvail()
 : <a class="el" href="uart__recv_8c.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">uart_recv.c</a>
 , <a class="el" href="softuart_8h.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">softuart.h</a>
 </li>
 <li>uartFormat()
-: <a class="el" href="softuart_8h.html#ae3da0e3822feb5275f4aa62d14f695ce">softuart.h</a>
-, <a class="el" href="uart__format_8c.html#ae3da0e3822feb5275f4aa62d14f695ce">uart_format.c</a>
+: <a class="el" href="uart__format_8c.html#ae3da0e3822feb5275f4aa62d14f695ce">uart_format.c</a>
+, <a class="el" href="softuart_8h.html#ae3da0e3822feb5275f4aa62d14f695ce">softuart.h</a>
 </li>
 <li>uartFormatP()
 : <a class="el" href="uart__format_8c.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">uart_format.c</a>
 , <a class="el" href="softuart_8h.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">softuart.h</a>
 </li>
 <li>uartHex()
-: <a class="el" href="softuart_8h.html#ada3fc177007e4016ea6a34f4126c109c">softuart.h</a>
-, <a class="el" href="uart__print_8c.html#ada3fc177007e4016ea6a34f4126c109c">uart_print.c</a>
+: <a class="el" href="uart__print_8c.html#ada3fc177007e4016ea6a34f4126c109c">uart_print.c</a>
+, <a class="el" href="softuart_8h.html#ada3fc177007e4016ea6a34f4126c109c">softuart.h</a>
 </li>
 <li>uartInit()
 : <a class="el" href="uart__send_8c.html#ac9cc64ed836eb5785dea53a934c023e6">uart_send.c</a>
 , <a class="el" href="softuart_8h.html#ac9cc64ed836eb5785dea53a934c023e6">softuart.h</a>
 </li>
 <li>uartInt()
-: <a class="el" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uart_print.c</a>
-, <a class="el" href="softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73">softuart.h</a>
+: <a class="el" href="softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73">softuart.h</a>
+, <a class="el" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uart_print.c</a>
 </li>
 <li>uartPrint()
-: <a class="el" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uart_print.c</a>
-, <a class="el" href="softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944">softuart.h</a>
+: <a class="el" href="softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944">softuart.h</a>
+, <a class="el" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uart_print.c</a>
 </li>
 <li>uartPrintP()
 : <a class="el" href="uart__print_8c.html#ade284dc2ab0d34c6a2e630c1980e25c1">uart_print.c</a>
 , <a class="el" href="softuart_8h.html#ade284dc2ab0d34c6a2e630c1980e25c1">softuart.h</a>
 </li>
 <li>uartRecv()
-: <a class="el" href="softuart_8h.html#aa433477328b5596a761980fd29d304dc">softuart.h</a>
-, <a class="el" href="uart__recv_8c.html#aa433477328b5596a761980fd29d304dc">uart_recv.c</a>
+: <a class="el" href="uart__recv_8c.html#aa433477328b5596a761980fd29d304dc">uart_recv.c</a>
+, <a class="el" href="softuart_8h.html#aa433477328b5596a761980fd29d304dc">softuart.h</a>
 </li>
 <li>uartSend()
 : <a class="el" href="softuart_8h.html#af369bc28bff778cf181a92fba7b544e3">softuart.h</a>
@@ -307,7 +402,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:48 for ATtiny85 Template Code by
+    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('iohelp_8h.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -124,7 +124,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="iohelp_8h__dep__incl.png" border="0" usemap="#include_2iohelp_8hdep" alt=""/></div>
 <map name="include_2iohelp_8hdep" id="include_2iohelp_8hdep">
-<area shape="rect" id="node3" href="analog_8c.html" title="shared/analog.c" alt="" coords="5,83,120,112"/><area shape="rect" id="node5" href="softspi_8c.html" title="shared/softspi.c" alt="" coords="144,83,259,112"/></map>
+<area shape="rect" id="node3" href="analog_8c.html" title="shared/analog.c" alt="" coords="5,83,120,112"/><area shape="rect" id="node5" href="nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="144,83,267,112"/><area shape="rect" id="node7" href="softspi_8c.html" title="shared/softspi.c" alt="" coords="291,83,405,112"/></map>
 </div>
 </div>
 <p><a href="iohelp_8h_source.html">Go to the source code of this file.</a></p>
@@ -288,18 +288,19 @@ Functions</h2></td></tr>
 <p>Analog pin inputs </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640add0cc42ad708e87cf4dd8a5c43c94097"></a>ADC0</em>&nbsp;</td><td class="fielddoc">
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a55d17f14e4a04efc3f0c5144fdb16a9d"></a>ADC1</em>&nbsp;</td><td class="fielddoc">
 <p>ADC0, PB5. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a246a534bca85a0d87ddcb59e28c55d32"></a>ADC2</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a55d17f14e4a04efc3f0c5144fdb16a9d"></a>ADC1</em>&nbsp;</td><td class="fielddoc">
 <p>ADC1, PB2. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640aae0370f8f308778a8f8aa5c26053bf63"></a>ADC3</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a246a534bca85a0d87ddcb59e28c55d32"></a>ADC2</em>&nbsp;</td><td class="fielddoc">
 <p>ADC2, PB4. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a2e9f047076bc235c6c38fecdc29cc2e9"></a>ADC4</em>&nbsp;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640aae0370f8f308778a8f8aa5c26053bf63"></a>ADC3</em>&nbsp;</td><td class="fielddoc">
 <p>ADC3, PB3. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a8c4e345d1a0f1729f095c38cbd0f2640a2e9f047076bc235c6c38fecdc29cc2e9"></a>ADC4</em>&nbsp;</td><td class="fielddoc">
+<p>ADC4 - internal temperature sensor. </p>
 </td></tr>
 </table>
 
@@ -830,6 +831,15 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="softspi_8c_source.html#l00040">40</a> of file <a class="el" href="softspi_8c_source.html">softspi.c</a>.</p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="iohelp_8h_a9201169ebd99c1ef3bd65c0cb3f3944c_icgraph.png" border="0" usemap="#iohelp_8h_a9201169ebd99c1ef3bd65c0cb3f3944c_icgraph" alt=""/></div>
+<map name="iohelp_8h_a9201169ebd99c1ef3bd65c0cb3f3944c_icgraph" id="iohelp_8h_a9201169ebd99c1ef3bd65c0cb3f3944c_icgraph">
+<area shape="rect" id="node3" href="nokialcd_8h.html#a49c8f51fe1e2c73a777debfdd3e9a7f1" title="lcdData" alt="" coords="165,59,232,88"/><area shape="rect" id="node17" href="nokialcd_8h.html#a4ad1bbb392f9aad8e794174f14a759f2" title="lcdCommand" alt="" coords="149,112,248,141"/><area shape="rect" id="node5" href="nokialcd_8h.html#a43af9b69bc8ae1e5bc9f273716363139" title="lcdClear" alt="" coords="311,59,380,88"/><area shape="rect" id="node7" href="nokialcd_8h.html#adf2c0ee9e535d1e2f7fb7a9cac540cb5" title="lcdClearRow" alt="" coords="297,112,393,141"/><area shape="rect" id="node9" href="nokialcd_8h.html#a5f827f36eee0ca1b258ebf10a31d6f30" title="lcdPrintChar" alt="" coords="299,165,392,195"/><area shape="rect" id="node15" href="nokialcd_8h.html#aff2edcf97d7a6ea7c22a5d76bfc63154" title="lcdImageP" alt="" coords="304,5,387,35"/><area shape="rect" id="node11" href="nokialcd_8h.html#a3de359e703aeb6f576fd6c2debcafaaf" title="lcdPrint" alt="" coords="447,139,513,168"/><area shape="rect" id="node13" href="nokialcd_8h.html#ae9044cdb10131f8f88ad10441ad0a305" title="lcdPrintP" alt="" coords="443,192,517,221"/><area shape="rect" id="node19" href="nokialcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf" title="lcdInit" alt="" coords="317,219,373,248"/></map>
+</div>
+</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -838,7 +848,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="iohelp_8h.html">iohelp.h</a></li>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:48 for ATtiny85 Template Code by
+    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

@@ -2,6 +2,8 @@ var dir_9982052f7ce695d12571567315b2fafa =
 [
     [ "analog.c", "analog_8c.html", "analog_8c" ],
     [ "crc16.c", "crc16_8c.html", "crc16_8c" ],
+    [ "nokiafont.c", "nokiafont_8c.html", "nokiafont_8c" ],
+    [ "nokialcd.c", "nokialcd_8c.html", "nokialcd_8c" ],
     [ "softspi.c", "softspi_8c.html", "softspi_8c" ],
     [ "uart_defs.h", "uart__defs_8h.html", null ],
     [ "uart_format.c", "uart__format_8c.html", "uart__format_8c" ],

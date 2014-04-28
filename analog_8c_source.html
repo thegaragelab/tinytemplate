@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('analog_8c_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,19 +119,19 @@ $(document).ready(function(){initNavTree('analog_8c_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  ADCSRA = (1 &lt;&lt; ADEN) | (1 &lt;&lt; ADPS2) | (1 &lt;&lt; ADPS1) | (1 &lt;&lt; ADPS0);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">// Switch off digital for the appropriate pin</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  uint8_t mask, didr;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640add0cc42ad708e87cf4dd8a5c43c94097">ADC0</a>) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640add0cc42ad708e87cf4dd8a5c43c94097" title="ADC0, PB5. ">ADC0</a>) {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mask = 1 &lt;&lt; PINB5;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    didr = 1 &lt;&lt; ADC0D;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a55d17f14e4a04efc3f0c5144fdb16a9d" title="ADC0, PB5. ">ADC1</a>) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a55d17f14e4a04efc3f0c5144fdb16a9d" title="ADC1, PB2. ">ADC1</a>) {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mask = 1 &lt;&lt; PINB2;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    didr = 1 &lt;&lt; ADC1D;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a246a534bca85a0d87ddcb59e28c55d32" title="ADC1, PB2. ">ADC2</a>) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a246a534bca85a0d87ddcb59e28c55d32" title="ADC2, PB4. ">ADC2</a>) {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mask = 1 &lt;&lt; PINB4;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    didr = 1 &lt;&lt; ADC2D;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640aae0370f8f308778a8f8aa5c26053bf63" title="ADC2, PB4. ">ADC3</a>) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640aae0370f8f308778a8f8aa5c26053bf63" title="ADC3, PB3. ">ADC3</a>) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mask = 1 &lt;&lt; PINB5;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    didr = 1 &lt;&lt; ADC3D;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
@@ -147,7 +147,7 @@ $(document).ready(function(){initNavTree('analog_8c_source.html','');});
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="iohelp_8h.html#a32dba577be2edcb05244a1753e521934">   61</a></span>&#160;uint16_t <a class="code" href="analog_8c.html#a32dba577be2edcb05244a1753e521934">adcRead</a>(<a class="code" href="iohelp_8h.html#a3bfff4d8911dc38f6ef174ea39b11863">ANALOG</a> adc, uint8_t skip, uint8_t average) {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// Change the reference voltage and select input</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  uint8_t muxval = adc;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a2e9f047076bc235c6c38fecdc29cc2e9" title="ADC3, PB3. ">ADC4</a>) <span class="comment">// Need 1.1V reference</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordflow">if</span>(adc==<a class="code" href="iohelp_8h.html#a8c4e345d1a0f1729f095c38cbd0f2640a2e9f047076bc235c6c38fecdc29cc2e9" title="ADC4 - internal temperature sensor. ">ADC4</a>) <span class="comment">// Need 1.1V reference</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    muxval = 0x80 | adc;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  ADMUX = muxval;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">// Start the conversion</span></div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('analog_8c_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="analog_8c.html">analog.c</a></li>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:48 for ATtiny85 Template Code by
+    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

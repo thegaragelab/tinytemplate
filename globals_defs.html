@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="globals.html"><span>All</span></a></li>
       <li><a href="globals_func.html"><span>Functions</span></a></li>
+      <li><a href="globals_vars.html"><span>Variables</span></a></li>
       <li><a href="globals_type.html"><span>Typedefs</span></a></li>
       <li><a href="globals_enum.html"><span>Enumerations</span></a></li>
       <li><a href="globals_eval.html"><span>Enumerator</span></a></li>
@@ -100,7 +101,7 @@ $(document).ready(function(){initNavTree('globals_defs.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,6 +112,36 @@ $(document).ready(function(){initNavTree('globals_defs.html','');});
 
 <div class="contents">
 &#160;<ul>
+<li>BAUD_RATE
+: <a class="el" href="hardware_8h.html#ad4455691936f92fdd6c37566fc58ba1f">hardware.h</a>
+</li>
+<li>CHAR_WIDTH
+: <a class="el" href="nokialcd_8c.html#a655981006fca173dd2e056bf81a63dc3">nokialcd.c</a>
+</li>
+<li>FONT_WIDTH
+: <a class="el" href="nokialcd_8c.html#a7b2e9cc063e140c50b67a4f224988a45">nokialcd.c</a>
+</li>
+<li>LCD_CD
+: <a class="el" href="hardware_8h.html#a7db11f262864923bfb723ad406be4b8a">hardware.h</a>
+</li>
+<li>LCD_COL
+: <a class="el" href="nokialcd_8h.html#a022c9a5e213dc30d3dcfe63b1c502ad7">nokialcd.h</a>
+</li>
+<li>LCD_ENABLED
+: <a class="el" href="hardware_8h.html#a2a130da2c94a4ad41bff326912371615">hardware.h</a>
+</li>
+<li>LCD_MOSI
+: <a class="el" href="hardware_8h.html#a7c52f1795c0919f36b0cfbe3d6645cc7">hardware.h</a>
+</li>
+<li>LCD_RESET
+: <a class="el" href="hardware_8h.html#a597d93b1f461dfdcdc2a6110bcf83b43">hardware.h</a>
+</li>
+<li>LCD_ROW
+: <a class="el" href="nokialcd_8h.html#a9d03ce59ff82a10ccd26b04f40411e80">nokialcd.h</a>
+</li>
+<li>LCD_SCK
+: <a class="el" href="hardware_8h.html#ac28c9759b60d3e2ce175ad3df49757d7">hardware.h</a>
+</li>
 <li>pinGet
 : <a class="el" href="iohelp_8h.html#ae2f3611b8b6f0d035ae08bf5c96d1097">iohelp.h</a>
 </li>
@@ -126,6 +157,15 @@ $(document).ready(function(){initNavTree('globals_defs.html','');});
 <li>PRINTF
 : <a class="el" href="softuart_8h.html#a11c98794bcb78ef756dddb18233c6f96">softuart.h</a>
 </li>
+<li>UART_DDR
+: <a class="el" href="hardware_8h.html#af41071861422ce5433a6814f9155028b">hardware.h</a>
+</li>
+<li>UART_PIN
+: <a class="el" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">hardware.h</a>
+</li>
+<li>UART_PORT
+: <a class="el" href="hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3">hardware.h</a>
+</li>
 <li>WAIT_INNER
 : <a class="el" href="utility_8c.html#a6f48567b1a0cb393a4f2d850da58d626">utility.c</a>
 </li>
@@ -135,7 +175,7 @@ $(document).ready(function(){initNavTree('globals_defs.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 21 2014 16:04:49 for ATtiny85 Template Code by
+    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

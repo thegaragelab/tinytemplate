@@ -1,0 +1,11 @@
+<map id="sspiOutMSB" name="sspiOutMSB">
+<area shape="rect" id="node3" href="$nokialcd_8h.html#a49c8f51fe1e2c73a777debfdd3e9a7f1" title="lcdData" alt="" coords="165,59,232,88"/>
+<area shape="rect" id="node17" href="$nokialcd_8h.html#a4ad1bbb392f9aad8e794174f14a759f2" title="lcdCommand" alt="" coords="149,112,248,141"/>
+<area shape="rect" id="node5" href="$nokialcd_8h.html#a43af9b69bc8ae1e5bc9f273716363139" title="lcdClear" alt="" coords="311,59,380,88"/>
+<area shape="rect" id="node7" href="$nokialcd_8h.html#adf2c0ee9e535d1e2f7fb7a9cac540cb5" title="lcdClearRow" alt="" coords="297,112,393,141"/>
+<area shape="rect" id="node9" href="$nokialcd_8h.html#a5f827f36eee0ca1b258ebf10a31d6f30" title="lcdPrintChar" alt="" coords="299,165,392,195"/>
+<area shape="rect" id="node15" href="$nokialcd_8h.html#aff2edcf97d7a6ea7c22a5d76bfc63154" title="lcdImageP" alt="" coords="304,5,387,35"/>
+<area shape="rect" id="node11" href="$nokialcd_8h.html#a3de359e703aeb6f576fd6c2debcafaaf" title="lcdPrint" alt="" coords="447,139,513,168"/>
+<area shape="rect" id="node13" href="$nokialcd_8h.html#ae9044cdb10131f8f88ad10441ad0a305" title="lcdPrintP" alt="" coords="443,192,517,221"/>
+<area shape="rect" id="node19" href="$nokialcd_8h.html#a3004c9c4fb128520f24f4407dca4f8cf" title="lcdInit" alt="" coords="317,219,373,248"/>
+</map>
