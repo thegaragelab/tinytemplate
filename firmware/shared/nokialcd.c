@@ -15,8 +15,9 @@
 // The font data
 extern PROGMEM const uint8_t BASE_FONT[];
 
-// Font width
-#define FONT_WIDTH 5
+// Character data width and displayed font width
+#define CHAR_WIDTH 5
+#define FONT_WIDTH (CHAR_WIDTH + 1)
 
 // Only provide the functions if the driver is enabled
 #ifdef LCD_ENABLED
@@ -114,7 +115,8 @@ void lcdClearRow(uint8_t row, bool invert) {
  * Display a single ASCII character at the position described by the row and
  * column parameters. Note that the row indicates an 8 pixel high character
  * row while the column represents individual pixels. This code uses a built
- * in character set where each character is 5 pixels wide.
+ * in character set where each character is 5 pixels wide and adds a single
+ * column of pixels as spacing giving a total width of 6 pixels.
  *
  * @param row the row number (0 to 5) to display the character.
  * @param col the column position (0 to 83) for the start of the left side of
@@ -136,12 +138,14 @@ void lcdPrintChar(uint8_t row, uint8_t col, char ch, bool invert) {
   lcdCommand(0x40 | (row % LCD_ROW));
   // And send the column data
   const uint8_t *chdata = BASE_FONT + ((ch - 0x20) * 5);
-  for(uint8_t pixels = 0; (pixels < FONT_WIDTH) && (col < LCD_COL); pixels++, col++, chdata++) {
+  for(uint8_t pixels = 0; (pixels < CHAR_WIDTH) && (col < LCD_COL); pixels++, col++, chdata++) {
     if(invert)
       lcdData(~pgm_read_byte_near(chdata));
     else
       lcdData(pgm_read_byte_near(chdata));
     }
+  // Add the padding byte
+  lcdData(invert?0xFF:0x00);
   }
 
 /** Write a nul terminated string
