@@ -30,6 +30,18 @@ extern "C" {
  */
 void lcdInit();
 
+/** Send a data byte to the LCD
+ *
+ * @param data the data byte to send.
+ */
+void lcdData(uint8_t data);
+
+/** Send a command byte to the LCD
+ *
+ * @param cmd the command byte to send.
+ */
+void lcdCommand(uint8_t cmd);
+
 /** Clear the screen
  *
  * Clear the entire display.
@@ -112,9 +124,10 @@ void lcdPrintP(uint8_t row, uint8_t col, const char *str, bool invert);
  *
  * This function is used to display user defined graphics held in PROGMEM to
  * the display. The first byte of the graphic indicates the height (in 8 pixel
- * rows) and the width (in pixel columns) packed as HHHWWWWW giving a maximum
- * size of 6 rows (48 pixels) by 63 pixels for a single image. Images that
- * will display off the edge of the screen are clipped.
+ * rows) and the width (in pixel columns) packed as HHWWWWWW giving a maximum
+ * size of 4 rows (32 pixels) by 84 pixels for a single image. Images that
+ * will display off the edge of the screen are clipped. The packed version of
+ * the width and height are 1 less than the actual width and height.
  *
  * The image is packed as a sequence of 8 pixel vertical strips.
  *

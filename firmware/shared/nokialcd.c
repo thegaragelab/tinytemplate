@@ -22,15 +22,11 @@ extern PROGMEM const uint8_t BASE_FONT[];
 // Only provide the functions if the driver is enabled
 #ifdef LCD_ENABLED
 
-//---------------------------------------------------------------------------
-// Helper functions
-//---------------------------------------------------------------------------
-
 /** Send a data byte to the LCD
  *
  * @param data the data byte to send.
  */
-static void lcdData(uint8_t data) {
+void lcdData(uint8_t data) {
   // Bring CD high
   PORTB |= (1 << LCD_CD);
   // Send the data
@@ -41,16 +37,12 @@ static void lcdData(uint8_t data) {
  *
  * @param cmd the command byte to send.
  */
-static void lcdCommand(uint8_t cmd) {
+void lcdCommand(uint8_t cmd) {
   // Bring CD low
   PORTB &= ~(1 << LCD_CD);
   // Send the data
   sspiOutMSB(LCD_SCK, LCD_MOSI, cmd, 8);
   }
-
-//---------------------------------------------------------------------------
-// Public API
-//---------------------------------------------------------------------------
 
 /** Initialise the LCD
  *
@@ -139,13 +131,12 @@ void lcdPrintChar(uint8_t row, uint8_t col, char ch, bool invert) {
   // And send the column data
   const uint8_t *chdata = BASE_FONT + ((ch - 0x20) * 5);
   for(uint8_t pixels = 0; (pixels < CHAR_WIDTH) && (col < LCD_COL); pixels++, col++, chdata++) {
-    if(invert)
-      lcdData(~pgm_read_byte_near(chdata));
-    else
-      lcdData(pgm_read_byte_near(chdata));
+    uint8_t data = pgm_read_byte_near(chdata);
+    lcdData(invert?~data:data);
     }
   // Add the padding byte
-  lcdData(invert?0xFF:0x00);
+  if(col < LCD_COL)
+    lcdData(invert?0xFF:0x00);
   }
 
 /** Write a nul terminated string
