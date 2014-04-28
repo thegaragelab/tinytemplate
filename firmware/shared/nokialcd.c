@@ -26,6 +26,8 @@ extern PROGMEM const uint8_t BASE_FONT[];
 //---------------------------------------------------------------------------
 
 /** Send a data byte to the LCD
+ *
+ * @param data the data byte to send.
  */
 static void lcdData(uint8_t data) {
   // Bring CD high
@@ -35,12 +37,14 @@ static void lcdData(uint8_t data) {
   }
 
 /** Send a command byte to the LCD
+ *
+ * @param cmd the command byte to send.
  */
-static void lcdCommand(uint8_t data) {
+static void lcdCommand(uint8_t cmd) {
   // Bring CD low
   PORTB &= ~(1 << LCD_CD);
   // Send the data
-  sspiOutMSB(LCD_SCK, LCD_MOSI, data, 8);
+  sspiOutMSB(LCD_SCK, LCD_MOSI, cmd, 8);
   }
 
 //---------------------------------------------------------------------------
@@ -63,9 +67,9 @@ void lcdInit() {
   PORTB |= (1 << LCD_RESET);
   // Initialise the LCD
   lcdCommand(0x21);  // LCD Extended Commands.
-  lcdCommand(0xA1);  // Set LCD Vop (Contrast) 0xB1/0xA1.
-  lcdCommand(0x04);  // Set Temp coefficent. //0x04
-  lcdCommand(0x14);  // LCD bias mode 1:48. //0x13
+  lcdCommand(0xA1);  // Set LCD Vop (Contrast).
+  lcdCommand(0x04);  // Set Temp coefficent.
+  lcdCommand(0x14);  // LCD bias mode 1:48.
   lcdCommand(0x20);  // LCD Normal commands
   lcdCommand(0x0C);  // Normal display, horizontal addressing
   }
