@@ -18,8 +18,8 @@ except:
 # Image processing
 #----------------------------------------------------------------------------
 
-MAX_IMAGE_WIDTH  = 64
-MAX_IMAGE_HEIGHT = 48
+MAX_IMAGE_WIDTH  = 84
+MAX_IMAGE_HEIGHT = 32
 
 """ Process an RGB file
 """
@@ -125,7 +125,7 @@ def createCode(name, width, height, bits):
     height = height + 1
     top = not top
   # Now generate the values for each byte starting with the size
-  results = [ ((height / 8 - 1) << 5) | (width - 1) ]
+  results = [ ((int(height / 8) - 1) << 6) | (width - 1) ]
   for y in range(height / 8):
     for x in range(width):
       value = 0x00
