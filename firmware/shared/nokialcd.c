@@ -10,14 +10,8 @@
 #include "../hardware.h"
 #include "utility.h"
 #include "iohelp.h"
+#include "smallfont.h"
 #include "nokialcd.h"
-
-// The font data
-extern PROGMEM const uint8_t BASE_FONT[];
-
-// Character data width and displayed font width
-#define CHAR_WIDTH 5
-#define FONT_WIDTH (CHAR_WIDTH + 1)
 
 // Only provide the functions if the driver is enabled
 #ifdef LCD_ENABLED
@@ -129,8 +123,8 @@ void lcdPrintChar(uint8_t row, uint8_t col, char ch, bool invert) {
   lcdCommand(0x80 | col);
   lcdCommand(0x40 | (row % LCD_ROW));
   // And send the column data
-  const uint8_t *chdata = BASE_FONT + ((ch - 0x20) * 5);
-  for(uint8_t pixels = 0; (pixels < CHAR_WIDTH) && (col < LCD_COL); pixels++, col++, chdata++) {
+  const uint8_t *chdata = SMALL_FONT + ((ch - 0x20) * 5);
+  for(uint8_t pixels = 0; (pixels < DATA_WIDTH) && (col < LCD_COL); pixels++, col++, chdata++) {
     uint8_t data = pgm_read_byte_near(chdata);
     lcdData(invert?~data:data);
     }
@@ -159,7 +153,7 @@ void lcdPrintChar(uint8_t row, uint8_t col, char ch, bool invert) {
  *               displayed as white on black.
  */
 void lcdPrint(uint8_t row, uint8_t col, const char *str, bool invert) {
-  for(;(*str!='\0')&&(col<LCD_COL);col+=FONT_WIDTH,str++)
+  for(;(*str!='\0')&&(col<LCD_COL);col+=CHAR_WIDTH,str++)
     lcdPrintChar(row, col, *str, invert);
   }
 
@@ -188,7 +182,7 @@ void lcdPrintP(uint8_t row, uint8_t col, const char *str, bool invert) {
     if(ch=='\0')
       return;
     lcdPrintChar(row, col, ch, invert);
-    col += FONT_WIDTH;
+    col += CHAR_WIDTH;
     str++;
     }
   }

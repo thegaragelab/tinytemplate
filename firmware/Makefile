@@ -41,7 +41,7 @@ SHARED = \
   shared/crc16.c \
   shared/analog.c \
   shared/softspi.c \
-  shared/nokiafont.c \
+  shared/smallfont.c \
   shared/nokialcd.c
 
 # Derive object file names

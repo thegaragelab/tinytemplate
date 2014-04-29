@@ -1,22 +1,23 @@
 /*--------------------------------------------------------------------------*
-* Nokia LCD Interface
+* Small font
 *---------------------------------------------------------------------------*
 * 26-Apr-2014 ShaneG
 *
-* A simple font for use with the Nokia LCD displays.
+* A simple font for use with LCD/OLED displays.
 *--------------------------------------------------------------------------*/
 #include <stdint.h>
-#include <avr/io.h>
 #include <avr/pgmspace.h>
+#include "smallfont.h"
 
 /** A 5x7 pixel character font
  *
- * This font gives a character display of 12 columns by 5 rows which is enough
- * for most purposes and allows for a simple software interface. It includes
- * glyphs for the standard printable ASCII characters from 0x20 to 0x7F
+ * This font gives a character display of 14 columns by 5 rows on the 84 x 48
+ * Nokia LCD and 21 columns by 8 rows on the 128 x 64 pixel OLED display which
+ * is enough for most purposes and allows for a simple software interface. It
+ * includes glyphs for the standard printable ASCII characters from 0x20 to 0x7F
  * inclusive.
  */
-PROGMEM const uint8_t BASE_FONT[] = {
+const uint8_t SMALL_FONT[] PROGMEM = {
   0x00, 0x00, 0x00, 0x00, 0x00, // 20
   0x00, 0x00, 0x5f, 0x00, 0x00, // 21 !
   0x00, 0x07, 0x00, 0x07, 0x00, // 22 "
