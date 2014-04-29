@@ -18,7 +18,7 @@ except:
 # Image processing
 #----------------------------------------------------------------------------
 
-MAX_IMAGE_WIDTH  = 84
+MAX_IMAGE_WIDTH  = 64
 MAX_IMAGE_HEIGHT = 32
 
 """ Process an RGB file

@@ -138,7 +138,7 @@ void lcdPrintChar(uint8_t row, uint8_t col, char ch, bool invert) {
  * Display a string of ASCII characters at the position described by the row
  * and column parameters. Note that the row indicates an 8 pixel high character
  * row while the column represents individual pixels. This code uses a built
- * in character set where each character is 5 pixels wide.
+ * in character set where each character is 6 pixels wide.
  *
  * This function does not perform any word wrapping or other text layout
  * functions. If the string exceeds the size of the display it will simply
@@ -162,7 +162,7 @@ void lcdPrint(uint8_t row, uint8_t col, const char *str, bool invert) {
  * Display a string of ASCII characters at the position described by the row
  * and column parameters. Note that the row indicates an 8 pixel high character
  * row while the column represents individual pixels. This code uses a built
- * in character set where each character is 5 pixels wide.
+ * in character set where each character is 6 pixels wide.
  *
  * This function does not perform any word wrapping or other text layout
  * functions. If the string exceeds the size of the display it will simply
@@ -192,7 +192,7 @@ void lcdPrintP(uint8_t row, uint8_t col, const char *str, bool invert) {
  * This function is used to display user defined graphics held in PROGMEM to
  * the display. The first byte of the graphic indicates the height (in 8 pixel
  * rows) and the width (in pixel columns) packed as HHWWWWWW giving a maximum
- * size of 4 rows (32 pixels) by 84 pixels for a single image. Images that
+ * size of 4 rows (32 pixels) by 64 pixels for a single image. Images that
  * will display off the edge of the screen are clipped. The packed version of
  * the width and height are 1 less than the actual width and height.
  *
