@@ -8,16 +8,57 @@
 #ifndef __HARDWARE_H
 #define __HARDWARE_H
 
-// Bring in IO definitions
+// Bring in what we need for pin definitions
 #include <avr/io.h>
+
+//---------------------------------------------------------------------------
+// Feature selection
+//
+// These defines control what code gets included in the library, make sure
+// everything you want is uncommented. Further down the file you get to
+// configure the pin assignments and other options for each feature.
+//---------------------------------------------------------------------------
+
+/** Software UART
+ *
+ * This feature provides a software implementation of a UART allowing you to
+ * perform serial communications. It supports speeds of up to 250Kbps, can be
+ * configured to use a single IO pin and has an option to be interrupt driven.
+ */
+#define ENABLE_SOFTUART
+
+//---------------------------------------------------------------------------
+// Software UART configuration
+//---------------------------------------------------------------------------
 
 // Baud rate to use
 #define BAUD_RATE 57600
 
-// Port and pin number to use (ATtiny only)
-#define UART_PORT PORTB
-#define UART_DDR  DDRB
-#define UART_PIN  PINB5
+/** Define the pin to use for transmission
+ */
+#define UART_TX   PINB5
+
+/** Define the pin to use for receiving
+ *
+ * If this pin is the same as the TX pin the code for the single pin UART
+ * implementation is compiled. This means no buffering and no interrupts.
+ */
+#define UART_RX   PINB4
+
+/** Enable interrupt driven mode
+ *
+ * Only valid in two pin configuration. If this is defined and you are using
+ * two pins for the UART then received data will be read and buffered as it
+ * arrives.
+ */
+#define UART_INTERRUPT
+
+/** Size of input buffer
+ *
+ * Only available in interrupt driven mode. This sets the size of the receive
+ * buffer (max 256 bytes).
+ */
+#define UART_BUFFER 4
 
 //---------------------------------------------------------------------------
 // Nokia LCD device support

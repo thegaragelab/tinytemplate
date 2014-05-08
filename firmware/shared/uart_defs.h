@@ -9,6 +9,15 @@
 #ifndef __UART_DEFS_H
 #define __UART_DEFS_H
 
+// See what mode we are in
+#if UART_TX == UART_RX
+#  define UART_ONEPIN
+#  undef  UART_INTERRUPT
+#else
+#  define UART_TWOPIN
+#endif
+
+// Calculate delays for the bit bashing functions
 #ifdef F_CPU
   /* account for integer truncation by adding 3/2 = 1.5 */
   #define TXDELAY   (int)(((F_CPU/BAUD_RATE)-7 +1.5)/3)

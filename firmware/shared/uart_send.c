@@ -26,8 +26,18 @@
  */
 void uartInit() {
   // Set as input and disable pullup
-  UART_DDR  &= ~(1 << UART_PIN);
-  UART_PORT &= ~(1 << UART_PIN);
+  DDRB  &= ~(1 << UART_RX);
+  PORTB &= ~(1 << UART_RX);
+#ifdef UART_TWOPIN
+  // Set up TX pin
+  DDRB |= (1 << UART_TX);
+  PORTB |= (1 << UART_TX);
+#  ifdef UART_INTERRUPT
+  // Enable pin change interrupts
+  PCMSK |= (1 << UART_RX);
+  GIMSK |= (1 << PCIE);
+#  endif /* UART_INTERRUPT */
+#endif /* UART_TWOPIN */
   }
 
 /** Write a single character
@@ -38,8 +48,11 @@ void uartInit() {
  */
 void uartSend(char ch) {
   // Set to output state and bring high
-  UART_PORT |= (1 << UART_PIN);
-  UART_DDR  |= (1 << UART_PIN);
+  PORTB |= (1 << UART_TX);
+#ifdef UART_ONEPIN
+  DDRB  |= (1 << UART_TX);
+#endif
+  cli();
   asm volatile(
     "  cbi %[uart_port], %[uart_pin]    \n\t"  // start bit
     "  in r0, %[uart_port]              \n\t"
@@ -59,13 +72,16 @@ void uartSend(char ch) {
     "  out %[uart_port], r0             \n\t"
     "  brne TxLoop                      \n\t"
     :
-    : [uart_port] "I" (_SFR_IO_ADDR(UART_PORT)),
-      [uart_pin] "I" (UART_PIN),
+    : [uart_port] "I" (_SFR_IO_ADDR(PORTB)),
+      [uart_pin] "I" (UART_TX),
       [txdelay] "I" (TXDELAY),
       [ch] "r" (ch)
     : "r0","r28","r29","r30");
+  sei();
+#ifdef UART_ONEPIN
   // Change back to idle state
-  UART_DDR  &= ~(1 << UART_PIN);
-  UART_PORT &= ~(1 << UART_PIN);
+  DDRB  &= ~(1 << UART_TX);
+  PORTB &= ~(1 << UART_TX);
+#endif
   }
 
