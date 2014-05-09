@@ -22,6 +22,9 @@
 #include "uart_defs.h"
 #include "softuart.h"
 
+// Only if enabled
+#ifdef UART_ENABLED
+
 //--- Set up input buffer if applicable
 #ifdef UART_INTERRUPT
 /** The input buffer for serial input
@@ -139,5 +142,6 @@ ISR(PCINT0_vect) {
     }
   // TODO: Chain on to the user interrupt handler if available.
   }
-#endif
+#endif /* UART_INTERRUPT */
 
+#endif /* UART_ENABLED */

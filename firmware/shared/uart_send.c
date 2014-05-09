@@ -22,6 +22,9 @@
 #include "uart_defs.h"
 #include "softuart.h"
 
+// Only if enabled
+#ifdef UART_ENABLED
+
 /** Initialise the UART
  */
 void uartInit() {
@@ -84,4 +87,6 @@ void uartSend(char ch) {
   PORTB &= ~(1 << UART_TX);
 #endif
   }
+
+#endif /* UART_ENABLED */
 

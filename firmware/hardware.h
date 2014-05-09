@@ -25,13 +25,18 @@
  * perform serial communications. It supports speeds of up to 250Kbps, can be
  * configured to use a single IO pin and has an option to be interrupt driven.
  */
-#define ENABLE_SOFTUART
+#define UART_ENABLED
 
 //---------------------------------------------------------------------------
 // Software UART configuration
 //---------------------------------------------------------------------------
 
-// Baud rate to use
+/** Baud rate to use
+ *
+ * The implementation is optimised for higher baudrates - please don't use
+ * anything below 57600 on an 8MHz clock. It does work at up to 250000 baud
+ * but you may experience a small amount of dropped packets at that speed.
+ */
 #define BAUD_RATE 57600
 
 /** Define the pin to use for transmission
@@ -43,7 +48,7 @@
  * If this pin is the same as the TX pin the code for the single pin UART
  * implementation is compiled. This means no buffering and no interrupts.
  */
-#define UART_RX   PINB4
+#define UART_RX   PINB5
 
 /** Enable interrupt driven mode
  *

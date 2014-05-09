@@ -7,7 +7,11 @@
 *--------------------------------------------------------------------------*/
 #include <stdarg.h>
 #include <stdbool.h>
+#include "../hardware.h"
 #include "softuart.h"
+
+// Only if enabled
+#ifdef UART_ENABLED
 
 //---------------------------------------------------------------------------
 // Helper functions
@@ -128,3 +132,6 @@ void uartFormatP(const char *cszString, ...) {
     }
   va_end(args);
   }
+
+#endif /* UART_ENABLED */
+

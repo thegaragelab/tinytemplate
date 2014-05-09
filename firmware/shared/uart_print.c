@@ -5,8 +5,12 @@
 *
 * Provides some simple formatted output functions for serial communications.
 *--------------------------------------------------------------------------*/
+#include "../hardware.h"
 #include "softuart.h"
 #include "utility.h"
+
+// Only if enabled
+#ifdef UART_ENABLED
 
 /** Print a string from RAM
  *
@@ -73,3 +77,6 @@ void uartHex(uint16_t value) {
   uartSend(hexChar(value >> 4));
   uartSend(hexChar(value));
   }
+
+#endif /* UART_ENABLED */
+
