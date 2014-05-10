@@ -41,14 +41,14 @@
 
 /** Define the pin to use for transmission
  */
-#define UART_TX   PINB5
+#define UART_TX   PINB1
 
 /** Define the pin to use for receiving
  *
  * If this pin is the same as the TX pin the code for the single pin UART
  * implementation is compiled. This means no buffering and no interrupts.
  */
-#define UART_RX   PINB5
+#define UART_RX   PINB0
 
 /** Enable interrupt driven mode
  *

@@ -32,7 +32,7 @@
  * In interrupt driven mode this buffer will hold the characters as they
  * come in.
  */
-static uint8_t          g_buffer[UART_BUFFER];
+static uint8_t g_buffer[UART_BUFFER];
 
 /** Current buffer index
  */
@@ -68,7 +68,12 @@ char uartRecv() {
   // Wait for a character
   while(g_index==0);
   cli();
-  ch = g_buffer[--g_index];
+  // Return the first character in the buffer
+  ch = g_buffer[0];
+  g_index--;
+  // Move everything down
+  for(uint8_t index=0; index<g_index; g_buffer[index] = g_buffer[index + 1], index++);
+  // Done
   sei();
 #else
   // Set as input and disable pullup
