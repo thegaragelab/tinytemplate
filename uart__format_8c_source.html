@@ -113,80 +113,87 @@ $(document).ready(function(){initNavTree('uart__format_8c_source.html','');});
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">*--------------------------------------------------------------------------*/</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="softuart_8h.html">softuart.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Helper functions</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> printFormat(<span class="keywordtype">char</span> ch1, <span class="keywordtype">char</span> ch2, va_list *args) {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">bool</span> skip = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="comment">// Fail fast</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordflow">if</span>(ch1==<span class="charliteral">&#39;%&#39;</span>) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Use the second character to determine what is requested</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span>((ch2==<span class="charliteral">&#39;%&#39;</span>)||(ch2==<span class="charliteral">&#39;\0&#39;</span>))</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(<span class="charliteral">&#39;%&#39;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;c&#39;</span>)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;      <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(va_arg(*args, <span class="keywordtype">int</span>));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;u&#39;</span>)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uartInt</a>(va_arg(*args, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;x&#39;</span>)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="uart__print_8c.html#ada3fc177007e4016ea6a34f4126c109c">uartHex</a>(va_arg(*args, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;s&#39;</span>)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uartPrint</a>(va_arg(*args, <span class="keywordtype">char</span> *));</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;S&#39;</span>)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="uart__print_8c.html#ade284dc2ab0d34c6a2e630c1980e25c1">uartPrintP</a>(va_arg(*args, <span class="keywordtype">char</span> *));</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(ch1);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    skip = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../hardware.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="softuart_8h.html">softuart.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// Only if enabled</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef UART_ENABLED</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">// Helper functions</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> printFormat(<span class="keywordtype">char</span> ch1, <span class="keywordtype">char</span> ch2, va_list *args) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">bool</span> skip = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Fail fast</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordflow">if</span>(ch1==<span class="charliteral">&#39;%&#39;</span>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Use the second character to determine what is requested</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>((ch2==<span class="charliteral">&#39;%&#39;</span>)||(ch2==<span class="charliteral">&#39;\0&#39;</span>))</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(<span class="charliteral">&#39;%&#39;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;c&#39;</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;      <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(va_arg(*args, <span class="keywordtype">int</span>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;u&#39;</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <a class="code" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uartInt</a>(va_arg(*args, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;x&#39;</span>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <a class="code" href="uart__print_8c.html#ada3fc177007e4016ea6a34f4126c109c">uartHex</a>(va_arg(*args, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;s&#39;</span>)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <a class="code" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uartPrint</a>(va_arg(*args, <span class="keywordtype">char</span> *));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(ch2==<span class="charliteral">&#39;S&#39;</span>)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <a class="code" href="uart__print_8c.html#ade284dc2ab0d34c6a2e630c1980e25c1">uartPrintP</a>(va_arg(*args, <span class="keywordtype">char</span> *));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">return</span> skip;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Public API</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="uart__send_8c.html#af369bc28bff778cf181a92fba7b544e3">uartSend</a>(ch1);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    skip = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordflow">return</span> skip;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="softuart_8h.html#ae3da0e3822feb5275f4aa62d14f695ce">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uart__format_8c.html#ae3da0e3822feb5275f4aa62d14f695ce">uartFormat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cszString, ...) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  va_list args;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  va_start(args, cszString);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">char</span> ch1, ch2 = *cszString;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index=1; ch2!=<span class="charliteral">&#39;\0&#39;</span>; index++) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    ch1 = ch2;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ch2 = cszString[index];</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span>(printFormat(ch1, ch2, &amp;args)) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="comment">// Move ahead an extra character so we wind up jumping by two</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;      ch1 = ch2;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      ch2 = cszString[++index];</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  va_end(args);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="code" href="softuart_8h.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">  115</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uart__format_8c.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">uartFormatP</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cszString, ...) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  va_list args;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  va_start(args, cszString);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">char</span> ch2 = pgm_read_byte_near(cszString), ch1 = ch2;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index=1; ch2!=<span class="charliteral">&#39;\0&#39;</span>; index++) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ch1 = ch2;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ch2 = pgm_read_byte_near(cszString + index);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span>(printFormat(ch1, ch2, &amp;args)) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="comment">// Move ahead an extra character so we wind up jumping by two</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      index++;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      ch1 = ch2;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;      ch2 = pgm_read_byte_near(cszString + index);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  va_end(args);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Public API</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//---------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="softuart_8h.html#ae3da0e3822feb5275f4aa62d14f695ce">   82</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uart__format_8c.html#ae3da0e3822feb5275f4aa62d14f695ce">uartFormat</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cszString, ...) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  va_list args;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  va_start(args, cszString);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">char</span> ch1, ch2 = *cszString;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index=1; ch2!=<span class="charliteral">&#39;\0&#39;</span>; index++) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ch1 = ch2;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ch2 = cszString[index];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">if</span>(printFormat(ch1, ch2, &amp;args)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="comment">// Move ahead an extra character so we wind up jumping by two</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      ch1 = ch2;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      ch2 = cszString[++index];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  va_end(args);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="code" href="softuart_8h.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uart__format_8c.html#ab00c3b0bea6181c51e29a1b1ab0da9aa">uartFormatP</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *cszString, ...) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  va_list args;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  va_start(args, cszString);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keywordtype">char</span> ch2 = pgm_read_byte_near(cszString), ch1 = ch2;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keywordflow">for</span>(<span class="keywordtype">int</span> index=1; ch2!=<span class="charliteral">&#39;\0&#39;</span>; index++) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ch1 = ch2;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    ch2 = pgm_read_byte_near(cszString + index);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span>(printFormat(ch1, ch2, &amp;args)) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;      <span class="comment">// Move ahead an extra character so we wind up jumping by two</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      index++;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      ch1 = ch2;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;      ch2 = pgm_read_byte_near(cszString + index);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  va_end(args);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* UART_ENABLED */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_9982052f7ce695d12571567315b2fafa.html">shared</a></li><li class="navelem"><a class="el" href="uart__format_8c.html">uart_format.c</a></li>
-    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
+    <li class="footer">Generated on Sat May 10 2014 20:35:49 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>

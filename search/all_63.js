@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['char_5fwidth',['CHAR_WIDTH',['../nokialcd_8c.html#a655981006fca173dd2e056bf81a63dc3',1,'nokialcd.c']]],
+  ['char_5fwidth',['CHAR_WIDTH',['../smallfont_8h.html#a655981006fca173dd2e056bf81a63dc3',1,'smallfont.h']]],
   ['crc16_2ec',['crc16.c',['../crc16_8c.html',1,'']]],
   ['crcbyte',['crcByte',['../crc16_8c.html#a9c996d42074a7561fce02a01cbbc46b3',1,'crcByte(uint16_t crc, uint8_t data):&#160;crc16.c'],['../utility_8h.html#a9c996d42074a7561fce02a01cbbc46b3',1,'crcByte(uint16_t crc, uint8_t data):&#160;crc16.c']]],
   ['crcdata',['crcData',['../crc16_8c.html#a2d0744572bd90390f23d026b1f124b35',1,'crcData(uint16_t crc, const uint8_t *pData, uint8_t length):&#160;crc16.c'],['../utility_8h.html#a2d0744572bd90390f23d026b1f124b35',1,'crcData(uint16_t crc, const uint8_t *pData, uint8_t length):&#160;crc16.c']]],

@@ -1,6 +1,7 @@
 <map id="shared/nokialcd.c" name="shared/nokialcd.c">
-<area shape="rect" id="node7" href="$hardware_8h.html" title="../hardware.h" alt="" coords="23,83,122,112"/>
-<area shape="rect" id="node10" href="$utility_8h.html" title="utility.h" alt="" coords="237,83,301,112"/>
-<area shape="rect" id="node16" href="$iohelp_8h.html" title="iohelp.h" alt="" coords="146,83,213,112"/>
-<area shape="rect" id="node21" href="$nokialcd_8h.html" title="nokialcd.h" alt="" coords="325,83,405,112"/>
+<area shape="rect" id="node7" href="$hardware_8h.html" title="../hardware.h" alt="" coords="5,83,104,112"/>
+<area shape="rect" id="node10" href="$utility_8h.html" title="utility.h" alt="" coords="373,83,437,112"/>
+<area shape="rect" id="node16" href="$iohelp_8h.html" title="iohelp.h" alt="" coords="179,83,245,112"/>
+<area shape="rect" id="node21" href="$smallfont_8h.html" title="smallfont.h" alt="" coords="461,83,547,112"/>
+<area shape="rect" id="node25" href="$nokialcd_8h.html" title="nokialcd.h" alt="" coords="269,83,349,112"/>
 </map>

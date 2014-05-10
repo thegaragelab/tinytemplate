@@ -1,3 +1,4 @@
 <map id="shared/uart_format.c" name="shared/uart_format.c">
-<area shape="rect" id="node7" href="$softuart_8h.html" title="softuart.h" alt="" coords="197,83,275,112"/>
+<area shape="rect" id="node7" href="$hardware_8h.html" title="../hardware.h" alt="" coords="197,83,296,112"/>
+<area shape="rect" id="node11" href="$softuart_8h.html" title="softuart.h" alt="" coords="320,83,397,112"/>
 </map>

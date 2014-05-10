@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['uart_5fddr',['UART_DDR',['../hardware_8h.html#af41071861422ce5433a6814f9155028b',1,'hardware.h']]],
-  ['uart_5fpin',['UART_PIN',['../hardware_8h.html#adfe1f2f2e871773f12769d2970182b01',1,'hardware.h']]],
-  ['uart_5fport',['UART_PORT',['../hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3',1,'hardware.h']]]
+  ['uart_5fbuffer',['UART_BUFFER',['../hardware_8h.html#af79b4a9110836fb244d1c11510ae2df6',1,'hardware.h']]],
+  ['uart_5fenabled',['UART_ENABLED',['../hardware_8h.html#add7b6c4234d476bd8bb529019b9f48e9',1,'hardware.h']]],
+  ['uart_5finterrupt',['UART_INTERRUPT',['../hardware_8h.html#ae2169f91efb9adeb6d6c8e217ff46fc4',1,'hardware.h']]],
+  ['uart_5fonepin',['UART_ONEPIN',['../uart__defs_8h.html#a50460e692065f9338d7669bb26da422e',1,'uart_defs.h']]],
+  ['uart_5frx',['UART_RX',['../hardware_8h.html#afd4d579b12950a4770aeaa6088400c3b',1,'hardware.h']]],
+  ['uart_5ftx',['UART_TX',['../hardware_8h.html#ac554053f778819e84a6234cbc100cd5d',1,'hardware.h']]]
 ];

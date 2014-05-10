@@ -87,8 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
-      <li><a href="#index_f"><span>f</span></a></li>
+      <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_h"><span>h</span></a></li>
+      <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_p"><span>p</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
@@ -166,10 +167,6 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
-<li>BASE_FONT
-: <a class="el" href="nokiafont_8c.html#af7e925f3a0b9a447ba30365c3fde956a">nokiafont.c</a>
-, <a class="el" href="nokialcd_8c.html#af7e925f3a0b9a447ba30365c3fde956a">nokialcd.c</a>
-</li>
 <li>BAUD_RATE
 : <a class="el" href="hardware_8h.html#ad4455691936f92fdd6c37566fc58ba1f">hardware.h</a>
 </li>
@@ -178,7 +175,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
 <li>CHAR_WIDTH
-: <a class="el" href="nokialcd_8c.html#a655981006fca173dd2e056bf81a63dc3">nokialcd.c</a>
+: <a class="el" href="smallfont_8h.html#a655981006fca173dd2e056bf81a63dc3">smallfont.h</a>
 </li>
 <li>crcByte()
 : <a class="el" href="crc16_8c.html#a9c996d42074a7561fce02a01cbbc46b3">crc16.c</a>
@@ -199,9 +196,9 @@ $(document).ready(function(){initNavTree('globals.html','');});
 </ul>
 
 
-<h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
-<li>FONT_WIDTH
-: <a class="el" href="nokialcd_8c.html#a7b2e9cc063e140c50b67a4f224988a45">nokialcd.c</a>
+<h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
+<li>DATA_WIDTH
+: <a class="el" href="smallfont_8h.html#af087b76f9707be9d3b43ba0c782c31c3">smallfont.h</a>
 </li>
 </ul>
 
@@ -210,6 +207,13 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>hexChar()
 : <a class="el" href="utility_8c.html#a199b431089c371605397b9df22fd9186">utility.c</a>
 , <a class="el" href="utility_8h.html#a199b431089c371605397b9df22fd9186">utility.h</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
+<li>ISR()
+: <a class="el" href="uart__recv_8c.html#aa64c6dce15e9de9105b4ae9533c9a267">uart_recv.c</a>
 </li>
 </ul>
 
@@ -294,6 +298,10 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <li>PRINTF
 : <a class="el" href="softuart_8h.html#a11c98794bcb78ef756dddb18233c6f96">softuart.h</a>
 </li>
+<li>PROGMEM
+: <a class="el" href="smallfont_8c.html#a1480d200396adf311648377e84c06b0b">smallfont.c</a>
+, <a class="el" href="smallfont_8h.html#a1480d200396adf311648377e84c06b0b">smallfont.h</a>
+</li>
 <li>pwmInit()
 : <a class="el" href="iohelp_8h.html#aaac015767df4572a7d9b278effdde661">iohelp.h</a>
 </li>
@@ -336,18 +344,27 @@ $(document).ready(function(){initNavTree('globals.html','');});
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
-<li>UART_DDR
-: <a class="el" href="hardware_8h.html#af41071861422ce5433a6814f9155028b">hardware.h</a>
+<li>UART_BUFFER
+: <a class="el" href="hardware_8h.html#af79b4a9110836fb244d1c11510ae2df6">hardware.h</a>
 </li>
-<li>UART_PIN
-: <a class="el" href="hardware_8h.html#adfe1f2f2e871773f12769d2970182b01">hardware.h</a>
+<li>UART_ENABLED
+: <a class="el" href="hardware_8h.html#add7b6c4234d476bd8bb529019b9f48e9">hardware.h</a>
 </li>
-<li>UART_PORT
-: <a class="el" href="hardware_8h.html#aa7a5950d998e44d87137de0780bd0af3">hardware.h</a>
+<li>UART_INTERRUPT
+: <a class="el" href="hardware_8h.html#ae2169f91efb9adeb6d6c8e217ff46fc4">hardware.h</a>
+</li>
+<li>UART_ONEPIN
+: <a class="el" href="uart__defs_8h.html#a50460e692065f9338d7669bb26da422e">uart_defs.h</a>
+</li>
+<li>UART_RX
+: <a class="el" href="hardware_8h.html#afd4d579b12950a4770aeaa6088400c3b">hardware.h</a>
+</li>
+<li>UART_TX
+: <a class="el" href="hardware_8h.html#ac554053f778819e84a6234cbc100cd5d">hardware.h</a>
 </li>
 <li>uartAvail()
-: <a class="el" href="uart__recv_8c.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">uart_recv.c</a>
-, <a class="el" href="softuart_8h.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">softuart.h</a>
+: <a class="el" href="softuart_8h.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">softuart.h</a>
+, <a class="el" href="uart__recv_8c.html#acc47dfdac6e3a50b34cc5fb0e7e4f077">uart_recv.c</a>
 </li>
 <li>uartFormat()
 : <a class="el" href="uart__format_8c.html#ae3da0e3822feb5275f4aa62d14f695ce">uart_format.c</a>
@@ -362,16 +379,16 @@ $(document).ready(function(){initNavTree('globals.html','');});
 , <a class="el" href="softuart_8h.html#ada3fc177007e4016ea6a34f4126c109c">softuart.h</a>
 </li>
 <li>uartInit()
-: <a class="el" href="uart__send_8c.html#ac9cc64ed836eb5785dea53a934c023e6">uart_send.c</a>
-, <a class="el" href="softuart_8h.html#ac9cc64ed836eb5785dea53a934c023e6">softuart.h</a>
+: <a class="el" href="softuart_8h.html#ac9cc64ed836eb5785dea53a934c023e6">softuart.h</a>
+, <a class="el" href="uart__send_8c.html#ac9cc64ed836eb5785dea53a934c023e6">uart_send.c</a>
 </li>
 <li>uartInt()
-: <a class="el" href="softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73">softuart.h</a>
-, <a class="el" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uart_print.c</a>
+: <a class="el" href="uart__print_8c.html#a7e1dccf7e217b5f3f55993665b9cdf73">uart_print.c</a>
+, <a class="el" href="softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73">softuart.h</a>
 </li>
 <li>uartPrint()
-: <a class="el" href="softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944">softuart.h</a>
-, <a class="el" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uart_print.c</a>
+: <a class="el" href="uart__print_8c.html#a0f5fc83589b4a46df9bbe951c6d89944">uart_print.c</a>
+, <a class="el" href="softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944">softuart.h</a>
 </li>
 <li>uartPrintP()
 : <a class="el" href="uart__print_8c.html#ade284dc2ab0d34c6a2e630c1980e25c1">uart_print.c</a>
@@ -402,7 +419,7 @@ $(document).ready(function(){initNavTree('globals.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Mon Apr 28 2014 19:26:35 for ATtiny85 Template Code by
+    <li class="footer">Generated on Sat May 10 2014 20:35:49 for ATtiny85 Template Code by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.4 </li>
   </ul>
