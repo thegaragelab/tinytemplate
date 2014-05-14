@@ -40,6 +40,7 @@ SHARED = \
   shared/utility.c \
   shared/crc16.c \
   shared/analog.c \
+  shared/pwm.c \
   shared/softspi.c \
   shared/smallfont.c \
   shared/nokialcd.c
