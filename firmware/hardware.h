@@ -27,6 +27,13 @@
  */
 #define UART_ENABLED
 
+/** System Ticks
+ *
+ * Enable the system ticks implementation. This allows measurement of longer
+ * periods of time (up to 11 minutes) with a 0.01 second precision.
+ */
+#define SYSTICK_ENABLED
+
 //---------------------------------------------------------------------------
 // Software UART configuration
 //---------------------------------------------------------------------------
