@@ -16,13 +16,19 @@
 extern "C" {
 #endif
 
+/** Number of ticks per second
+ *
+ * Defines the approximate number of ticks that occur every second.
+ */
+#define TICKS_PER_SECOND 100
+
 /** Initialise the 'ticks' subsystem.
  *
  * This function sets up the required interrupts and initialises the tick
- * counter. A tick occurs approximately every 0.01 seconds (100Hz) and they
- * are tracked by a 16 bit counter. A program can use the difference between
- * samples of the counter to measure longer periods of time (up to about 11
- * minutes).
+ * counter. There are approximately TICKS_PER_SECOND ticks every second that
+ * elapses (depending on interrupt activity and clock accuracy) and they are
+ * tracked by a 16 bit counter. A program can use the difference between
+ * samples of the counter to measure longer periods of time.
  *
  * The ticks system uses TIMER1 to provide the interrupt used to update the
  * time count (this interrupt is shared with the software PWM implementation
@@ -33,7 +39,7 @@ void ticksInit();
 /** Get the current tick count
  *
  * @return the current tick count. The count wraps around once it reaches
- *         65535 (about 10.9 minutes).
+ *         65535.
  */
 uint16_t ticks();
 

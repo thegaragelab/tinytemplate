@@ -34,6 +34,13 @@
  */
 #define SYSTICK_ENABLED
 
+/** Software PWM
+ *
+ * This enables the software PWM implementation which can generate PWM output
+ * at 100Hz on up to 4 output pins.
+ */
+#define SOFTPWM_ENABLED
+
 //---------------------------------------------------------------------------
 // Software UART configuration
 //---------------------------------------------------------------------------
@@ -48,14 +55,14 @@
 
 /** Define the pin to use for transmission
  */
-#define UART_TX   PINB1
+#define UART_TX   PINB5
 
 /** Define the pin to use for receiving
  *
  * If this pin is the same as the TX pin the code for the single pin UART
  * implementation is compiled. This means no buffering and no interrupts.
  */
-#define UART_RX   PINB0
+#define UART_RX   PINB5
 
 /** Enable interrupt driven mode
  *
@@ -71,6 +78,29 @@
  * buffer (max 256 bytes).
  */
 #define UART_BUFFER 4
+
+//---------------------------------------------------------------------------
+// Software PWM configuration
+//---------------------------------------------------------------------------
+
+/** Number of software PWM pins required
+ *
+ * There can be up to 4 pins. For each pin you must define SPWM_PINn where
+ * n is SPWM number.
+ */
+#define SPWM_COUNT 3
+
+/** Pin associated with SPWM0 */
+#define SPWM_PIN0 PINB0
+
+/** Pin associated with SPWM1 */
+#define SPWM_PIN1 PINB1
+
+/** Pin associated with SPWM2 */
+#define SPWM_PIN2 PINB2
+
+/** Pin associated with SPWM3 */
+#define SPWM_PIN3 PINB3
 
 //---------------------------------------------------------------------------
 // Nokia LCD device support

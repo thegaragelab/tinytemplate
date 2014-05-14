@@ -94,7 +94,7 @@ void adcInit(ANALOG adc);
 uint16_t adcRead(ANALOG adc, uint8_t skip, uint8_t average);
 
 //---------------------------------------------------------------------------
-// PWM helpers
+// Hardware PWM helpers
 //---------------------------------------------------------------------------
 
 /** PWM outputs
@@ -122,6 +122,38 @@ void pwmInit();
  *              (fully on).
  */
 void pwmOut(PWM pwm, uint8_t value);
+
+//---------------------------------------------------------------------------
+// Software PWM implementation
+//---------------------------------------------------------------------------
+
+/** Software PWM outputs
+ *
+ * This enumerates the available outputs for software generated PWM.
+ */
+typedef enum _SPWM {
+  SPWM0 = 0, //!< Software PWM output 0 (defined by SPWM_PIN0)
+  SPWM1 = 1, //!< Software PWM output 1 (defined by SPWM_PIN1)
+  SPWM2 = 2, //!< Software PWM output 2 (defined by SPWM_PIN2)
+  SPWM3 = 3, //!< Software PWM output 3 (defined by SPWM_PIN3)
+  } SPWM;
+
+/** Initialise the software PWM system
+ *
+ * Sets up software PWM support. Using the software PWM implementation also
+ * enables the system ticks module (they share the same interrupt).
+ */
+void spwmInit();
+
+/** Set the value of a software PWM pin
+ *
+ * Set the output for a software PWM pin.
+ *
+ * @param pwm   the software PWM output to change
+ * @param value the value for the duty cycle ranging from 0 (fully off) to 255
+ *              (fully on).
+ */
+void spwmOut(SPWM pwm, uint8_t value);
 
 //---------------------------------------------------------------------------
 // Software SPI
