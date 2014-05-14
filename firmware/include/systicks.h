@@ -20,7 +20,7 @@ extern "C" {
  *
  * Defines the approximate number of ticks that occur every second.
  */
-#define TICKS_PER_SECOND 100
+#define TICKS_PER_SECOND 64
 
 /** Initialise the 'ticks' subsystem.
  *

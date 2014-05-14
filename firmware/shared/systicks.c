@@ -14,6 +14,9 @@
 // Maximum number of software PWM outputs
 #define SPWM_MAX 4
 
+// Number of 'ticklets' per tick
+#define TICKLETS 64
+
 // If software PWM is enabled, we get systick as well
 #ifdef SOFTPWM_ENABLED
 #  define SYSTICK_ENABLED
@@ -33,7 +36,7 @@
 //! The main system tick counter
 static volatile uint16_t g_systicks = 0;
 
-//! The 'ticklet' counter - used to count 1/256 of a tick
+//! The 'ticklet' counter - used to count a portion of a tick
 static volatile uint8_t  g_ticklet = 0;
 
 /** Initialise the 'ticks' subsystem.
@@ -49,7 +52,7 @@ static volatile uint8_t  g_ticklet = 0;
  * as well).
  */
 void ticksInit() {
-  TCCR1 = (1 << CS10) | (1 << CS13);
+  TCCR1 = (1 << CS12) | (1 << CS13); // Divide by 2048
   GTCCR &= 0x81; // Clear all TIMER1 bits
   TIMSK |= (1 << TOIE1);
   }
@@ -146,7 +149,7 @@ void spwmOut(SPWM pwm, uint8_t value) {
  */
 ISR(TIMER1_OVF_vect) {
   // Update the 'ticklet' count
-  g_ticklet++;
+  g_ticklet += (256 / TICKLETS);
 #ifdef SOFTPWM_ENABLED
   // Update PWM outputs
 #  if SOFTPWM_COUNT >= 1
