@@ -38,8 +38,10 @@ SHARED = \
   shared/uart_print.c \
   shared/uart_format.c \
   shared/utility.c \
+  shared/systicks.c \
   shared/crc16.c \
   shared/analog.c \
+  shared/pwm.c \
   shared/softspi.c \
   shared/smallfont.c \
   shared/nokialcd.c

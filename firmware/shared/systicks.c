@@ -57,7 +57,7 @@ void ticksInit() {
   TCNT1 = 0;
   GTCCR &= 0x81;
   GTCCR |= (1 << PSR1);
-  // Set up the prescaler and enable overflow
+  // Set up the prescaler and enable overflow interrupt
   TCCR1 = (1 << CS12) | (1 << CS10); // Divide by 8
   TIMSK |= (1 << TOIE1);
   }
@@ -189,4 +189,3 @@ ISR(TIMER1_OVF_vect) {
   }
 
 #endif /* SOFTPWM_ENABLED || SYSTICK_ENABLED */
-
