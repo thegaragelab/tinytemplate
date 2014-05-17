@@ -58,7 +58,7 @@ void ticksInit() {
   GTCCR &= 0x81;
   GTCCR |= (1 << PSR1);
   // Set up the prescaler and enable overflow interrupt
-  TCCR1 = (1 << CS12) | (1 << CS10); // Divide by 8
+  TCCR1 = (1 << CS12); // Divide by 8
   TIMSK |= (1 << TOIE1);
   }
 
@@ -157,26 +157,26 @@ ISR(TIMER1_OVF_vect) {
   g_ticklet += (256 / TICKLETS);
 #ifdef SOFTPWM_ENABLED
   // Update PWM outputs
-#  if SOFTPWM_COUNT >= 1
-  if((g_pwmout[0]!=0)&&(g_pwmout[0]<=g_ticklet))
+#  if SPWM_COUNT >= 1
+  if((g_pwmout[0]>0)&&(g_ticklet<=g_pwmout[0]))
     pinHigh(SPWM_PIN0);
   else
     pinLow(SPWM_PIN0);
 #  endif
-#  if SOFTPWM_COUNT >= 2
-  if((g_pwmout[1]!=0)&&(g_pwmout[1]<=g_ticklet))
+#  if SPWM_COUNT >= 2
+  if((g_pwmout[1]!=0)&&(g_ticklet<=g_pwmout[1]))
     pinHigh(SPWM_PIN1);
   else
     pinLow(SPWM_PIN1);
 #  endif
-#  if SOFTPWM_COUNT >= 3
-  if((g_pwmout[2]!=0)&&(g_pwmout[2]<=g_ticklet))
+#  if SPWM_COUNT >= 3
+  if((g_pwmout[2]!=0)&&(g_ticklet<=g_pwmout[2]))
     pinHigh(SPWM_PIN2);
   else
     pinLow(SPWM_PIN2);
 #  endif
-#  if SOFTPWM_COUNT >= 4
-  if((g_pwmout[3]!=0)&&(g_pwmout[3]<=g_ticklet))
+#  if SPWM_COUNT >= 4
+  if((g_pwmout[3]!=0)&&(g_ticklet<=g_pwmout[3]))
     pinHigh(SPWM_PIN3);
   else
     pinLow(SPWM_PIN3);
