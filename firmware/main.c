@@ -8,7 +8,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <avr/io.h>
+#include <avr/interrupt.h>
 #include "softuart.h"
+#include "iohelp.h"
 #include "utility.h"
 
 // Forward declaration with 'noreturn' attribute
@@ -17,15 +19,10 @@ void main() __attribute__ ((noreturn));
 /** Program entry point
  */
 void main() {
-  uint16_t count = 0;
-  uartInit();
-  while(true) {
-    count++;
-    PRINTF("1: %c\n", count);
-    PRINTF("2: %s, %c\n", "string", count);
-    PRINTF("3: %c, %s, %c\n", count, "string", count);
-    PRINTF("4: %c, %c, %s\n", count, count, "string");
-    PRINTF("5: %c, %c, %s, %c\n", count, count, "string", count);
-    wait(1000);
-    }
+  spwmInit();
+  sei();
+  spwmOut(SPWM0, 64);  // 25% duty cycle
+  spwmOut(SPWM1, 172); // 75% duty cycle
+  spwmOut(SPWM2, 255); // 100% duty cycle
+  while(true);
   }
