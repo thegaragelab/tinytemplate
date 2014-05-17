@@ -58,7 +58,11 @@ clean:
 	@rm -f $(OBJECTS) $(TARGET).hex $(TARGET).elf
 
 flash: $(TARGET).hex
+ifneq ($(PORT),)
+	@$(MBFLASH) -d $(MCU) -p $(PORT) $(TARGET).hex
+else
 	@$(MBFLASH) -d $(MCU) $(TARGET).hex
+endif
 
 docs:
 	@rm -rf docs
