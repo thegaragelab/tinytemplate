@@ -110,7 +110,7 @@
 //---------------------------------------------------------------------------
 
 // Enable Nokia LCD support
-#define LCD_ENABLED
+//#define LCD_ENABLED
 
 // Nokia LCD pin numbers
 #define LCD_MOSI  PINB2

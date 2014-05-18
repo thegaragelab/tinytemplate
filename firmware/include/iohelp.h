@@ -155,6 +155,16 @@ void spwmInit();
  */
 void spwmOut(SPWM pwm, uint8_t value);
 
+/** Get the current value of a software PWM pin
+ *
+ * Returns the current value of a software PWM pin.
+ *
+ * @param pwm the software PWM output to query
+ *
+ * @return the current value of the software PWM pin
+ */
+uint8_t spwmValue(SPWM pwm);
+
 //---------------------------------------------------------------------------
 // Software SPI
 //---------------------------------------------------------------------------

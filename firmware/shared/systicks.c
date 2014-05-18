@@ -142,6 +142,21 @@ void spwmOut(SPWM pwm, uint8_t value) {
     g_pwmout[pwm] = value;
   }
 
+/** Get the current value of a software PWM pin
+ *
+ * Returns the current value of a software PWM pin.
+ *
+ * @param pwm the software PWM output to query
+ *
+ * @return the current value of the software PWM pin
+ */
+uint8_t spwmValue(SPWM pwm) {
+  if(pwm<SPWM_COUNT)
+    return g_pwmout[pwm];
+  // Invalid pin
+  return 0;
+  }
+
 #endif /* SOFTPWM_ENABLED */
 
 //---------------------------------------------------------------------------
