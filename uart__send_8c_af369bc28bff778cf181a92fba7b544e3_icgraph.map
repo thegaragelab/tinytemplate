@@ -1,6 +1,6 @@
 <map id="uartSend" name="uartSend">
-<area shape="rect" id="node3" href="$softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944" title="uartPrint" alt="" coords="133,5,203,35"/>
-<area shape="rect" id="node5" href="$softuart_8h.html#ade284dc2ab0d34c6a2e630c1980e25c1" title="uartPrintP" alt="" coords="128,59,208,88"/>
-<area shape="rect" id="node7" href="$softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73" title="uartInt" alt="" coords="139,112,197,141"/>
-<area shape="rect" id="node9" href="$softuart_8h.html#ada3fc177007e4016ea6a34f4126c109c" title="uartHex" alt="" coords="135,165,201,195"/>
+<area shape="rect" id="node2" href="$softuart_8h.html#a0f5fc83589b4a46df9bbe951c6d89944" title="uartPrint" alt="" coords="133,5,203,32"/>
+<area shape="rect" id="node3" href="$softuart_8h.html#ade284dc2ab0d34c6a2e630c1980e25c1" title="uartPrintP" alt="" coords="128,56,208,83"/>
+<area shape="rect" id="node4" href="$softuart_8h.html#a7e1dccf7e217b5f3f55993665b9cdf73" title="uartInt" alt="" coords="139,107,197,133"/>
+<area shape="rect" id="node5" href="$softuart_8h.html#ada3fc177007e4016ea6a34f4126c109c" title="uartHex" alt="" coords="134,157,202,184"/>
 </map>

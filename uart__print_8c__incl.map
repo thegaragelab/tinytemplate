@@ -1,5 +1,5 @@
 <map id="shared/uart_print.c" name="shared/uart_print.c">
-<area shape="rect" id="node3" href="$hardware_8h.html" title="../hardware.h" alt="" coords="5,83,104,112"/>
-<area shape="rect" id="node7" href="$softuart_8h.html" title="softuart.h" alt="" coords="128,83,205,112"/>
-<area shape="rect" id="node13" href="$utility_8h.html" title="utility.h" alt="" coords="239,83,303,112"/>
+<area shape="rect" id="node2" href="$hardware_8h.html" title="../hardware.h" alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node4" href="$softuart_8h.html" title="softuart.h" alt="" coords="129,80,205,107"/>
+<area shape="rect" id="node7" href="$utility_8h.html" title="utility.h" alt="" coords="241,80,305,107"/>
 </map>

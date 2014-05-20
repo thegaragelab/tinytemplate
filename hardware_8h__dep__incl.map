@@ -1,7 +1,8 @@
 <map id="hardware.h" name="hardware.h">
-<area shape="rect" id="node3" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="5,83,128,112"/>
-<area shape="rect" id="node5" href="$uart__format_8c.html" title="shared/uart_format.c" alt="" coords="152,83,293,112"/>
-<area shape="rect" id="node7" href="$uart__print_8c.html" title="shared/uart_print.c" alt="" coords="317,83,448,112"/>
-<area shape="rect" id="node9" href="$uart__recv_8c.html" title="shared/uart_recv.c" alt="" coords="472,83,603,112"/>
-<area shape="rect" id="node11" href="$uart__send_8c.html" title="shared/uart_send.c" alt="" coords="627,83,760,112"/>
+<area shape="rect" id="node2" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node3" href="$systicks_8c.html" title="shared/systicks.c" alt="" coords="153,80,279,107"/>
+<area shape="rect" id="node4" href="$uart__format_8c.html" title="shared/uart_format.c" alt="" coords="303,80,445,107"/>
+<area shape="rect" id="node5" href="$uart__print_8c.html" title="shared/uart_print.c" alt="" coords="469,80,599,107"/>
+<area shape="rect" id="node6" href="$uart__recv_8c.html" title="shared/uart_recv.c" alt="" coords="624,80,753,107"/>
+<area shape="rect" id="node7" href="$uart__send_8c.html" title="shared/uart_send.c" alt="" coords="779,80,912,107"/>
 </map>

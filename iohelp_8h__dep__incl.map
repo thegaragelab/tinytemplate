@@ -1,5 +1,7 @@
 <map id="include/iohelp.h" name="include/iohelp.h">
-<area shape="rect" id="node3" href="$analog_8c.html" title="shared/analog.c" alt="" coords="5,83,120,112"/>
-<area shape="rect" id="node5" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="144,83,267,112"/>
-<area shape="rect" id="node7" href="$softspi_8c.html" title="shared/softspi.c" alt="" coords="291,83,405,112"/>
+<area shape="rect" id="node2" href="$analog_8c.html" title="shared/analog.c" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$nokialcd_8c.html" title="shared/nokialcd.c" alt="" coords="145,80,268,107"/>
+<area shape="rect" id="node4" href="$pwm_8c.html" title="shared/pwm.c" alt="" coords="293,80,397,107"/>
+<area shape="rect" id="node5" href="$softspi_8c.html" title="shared/softspi.c" alt="" coords="421,80,536,107"/>
+<area shape="rect" id="node6" href="$systicks_8c.html" title="shared/systicks.c" alt="" coords="560,80,685,107"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="shared/uart_recv.c" name="shared/uart_recv.c">
-<area shape="rect" id="node7" href="$hardware_8h.html" title="../hardware.h" alt="" coords="149,83,247,112"/>
-<area shape="rect" id="node10" href="$uart__defs_8h.html" title="uart_defs.h" alt="" coords="271,83,357,112"/>
-<area shape="rect" id="node12" href="$softuart_8h.html" title="softuart.h" alt="" coords="381,83,458,112"/>
+<area shape="rect" id="node4" href="$hardware_8h.html" title="../hardware.h" alt="" coords="151,80,250,107"/>
+<area shape="rect" id="node5" href="$uart__defs_8h.html" title="uart_defs.h" alt="" coords="274,80,360,107"/>
+<area shape="rect" id="node6" href="$softuart_8h.html" title="softuart.h" alt="" coords="386,80,462,107"/>
 </map>
